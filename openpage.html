@@ -1,0 +1,2565 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+
+
+
+
+
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+        
+    <link rel="stylesheet" href="./header.css">
+
+    <title>Buy And Sell</title>
+    <style>
+         :root {
+            --red: #ff5a3c;
+            --light-red: #f9edeb;
+        }
+
+        * {
+            font-family: 'poppins', sans-serif;
+            
+        }
+
+                section {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* outline: none; 
+        border:none; */
+            text-decoration: none;
+            text-transform: capitalize;
+            /*zoom: 94%;*/
+        }
+
+        html {
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            scroll-padding-top: 7rem;
+        }
+
+
+        body {
+            margin: 0px;
+        }
+        #GFG {
+            text-decoration: none;
+        }
+
+        .icon-location {
+            background: url("https://img.icons8.com/material-outlined/24/undefined/marker.png") no-repeat left;
+            background-size: 20px;
+            padding-left: 25px;
+
+            height: 48px;
+            resize: vertical;
+            margin: 16px;
+            overflow: visible;
+            font-size: larger;
+        }
+
+        .icon-location::placeholder {
+            font-size: 20px;
+        }
+
+        .icon-search {
+            padding-left: 25px;
+            background: url("https://static.thenounproject.com/png/101791-200.png") no-repeat left;
+            background-size: 20px;
+            height: 48px;
+            width: 50%;
+            resize: vertical;
+            margin: 16px;
+            overflow: visible;
+            font-size: larger;
+        }
+
+        .icon-search::placeholder {
+            font-size: 20px;
+
+
+        }
+            .select {
+                font-size: 20px;
+            }
+
+            #cities {
+                height: 15px;
+                overflow: visible;
+            }
+
+            #cities::placeholder {
+                font-size: 10px;
+            }
+        
+
+
+
+
+
+        
+        /* offer section css */
+
+        #i1,
+        #i2,
+        #i3,
+        #i4,
+        #i5 {
+            display: none;
+        }
+
+        .container1 {
+            margin: 0 auto;
+            /* margin-top: 5px; */
+            position: relative;
+            width: -webkit-fill-available;
+            /* height: 5px; */
+            padding-bottom: 38%;
+            user-select: none;
+            background-color: #1c1c1c;
+            /* border: solid 4px #616161; */
+            border-radius: 10px;
+        }
+
+        .container1 .slide_img {
+            position: absolute;
+            width: 100%;
+            ;
+            height: 100%;
+        }
+
+        .container1 .slide_img img {
+            width: inherit;
+            height: inherit;
+        }
+
+        .prev,
+        .next {
+            width: 6%;
+            height: inherit;
+            position: absolute;
+            top: 0;
+           
+            color: rgba(244, 244, 244, .9);
+            z-index: 99;
+            transition: .45s;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .next {
+            right: 0;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        label span {
+            position: absolute;
+            font-size: 100pt;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .prev:hover,
+        .next:hover {
+            transition: .3s;
+            
+            color: #ffffff;
+        }
+
+        .container1 #nav_slide {
+            width: 100%;
+            bottom: 12%;
+            height: 11px;
+            position: absolute;
+            text-align: center;
+            z-index: 99;
+            cursor: default;
+        }
+
+        #nav_slide .dots {
+            top: 20px;
+            width: 14px;
+            height: 14px;
+            margin: 0 4px;
+            position: relative;
+            border-radius: 100%;
+            display: inline-block;
+            background-color: rgba(0, 0, 0, 0.6);
+            transition: .4s;
+        }
+
+        #nav_slide .dots:hover {
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.9);
+            transition: .25s
+        }
+
+        .slide_img {
+            z-index: -1;
+        }
+
+        #i1:checked~#one,
+        #i2:checked~#two,
+        #i3:checked~#three,
+        #i4:checked~#four,
+        #i5:checked~#five {
+            z-index: 9;
+            animation: scroll 1s ease-in-out;
+        }
+
+        #i1:checked~#nav_slide #dot1,
+        #i2:checked~#nav_slide #dot2,
+        #i3:checked~#nav_slide #dot3,
+        #i4:checked~#nav_slide #dot4,
+        #i5:checked~#nav_slide #dot5 {
+            background-color: rgba(255, 255, 255, .9);
+        }
+
+        @keyframes scroll {
+            0% {
+                opacity: .4;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @media screen and (max-width: 1150px) {
+            .container1 {
+                border: none;
+                width: 100%;
+                height: 0;
+                padding-bottom: 55%;
+            }
+
+            label span {
+                font-size: 50pt;
+            }
+
+            .prev,
+            .next {
+                width: 15%;
+            }
+
+            #nav_slide .dots {
+                width: 12px;
+                height: 12px;
+            }
+        }
+
+        @media screen and(min-width: 1150px) {
+            .me {
+                display: none;
+            }
+        }
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+:root {
+    /* Neutral */
+    --Very-vark-blue: hsl(220, 13%, 13%);
+    --Dark-grayish-blue: hsl(219, 9%, 45%);
+    --Grayish-blue: hsl(220, 14%, 75%);
+    --Light-grayish-blue: hsl(223, 64%, 98%);
+    --White: hsl(0, 0%, 100%);
+    --Black: hsl(0, 0%, 0%);
+
+    /* Primary */
+
+    --Orange: hsl(26, 100%, 55%);
+    --Pale-orange: hsl(25, 100%, 94%);
+}
+
+
+.main {
+
+    min-height: 100vh;
+}
+
+.navbar_contaniner {
+
+    padding: 0 100px 0 100px;
+}
+
+
+
+
+
+.list {
+    flex: 1;
+}
+
+.ullist {
+
+    display: inline-flex;
+    gap: 34px;
+}
+
+.ullist li {
+    border: solid white;
+    border-width: 0 0 3px 0px;
+    list-style: none;
+    cursor: pointer;
+    padding: 43px 0 43px 0px;
+
+}
+
+.ullist li:hover {
+    border: solid #ff8254;
+    border-width: 0 0 3px 0px;
+}
+
+
+
+
+
+
+.count {
+    height: 12px;
+    width: 21px;
+    background: #ff8100;
+    border-radius: 6px 6px 6px 6px;
+    text-align: center;
+    font-size: 10px;
+    color: #ffff;
+    position: absolute;
+    transform: translateX(-10px) translateY(-6px);
+    opacity: 0;
+}
+
+.avatar {
+    width: 50px;
+    border: 2px solid #ff791c;
+    border-radius: 50%;
+}
+
+
+
+.section_two {
+
+    display: flex;
+    padding: 55px 100px 50px 150px;
+    gap: 6rem;
+    margin-top: 60px;
+
+}
+
+.item_selector {
+    background-color: var(--Light-grayish-blue);
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    /* padding: 10px 9px 10px 9px;*/
+    border-radius: 5px;
+
+}
+
+.product_image_container {
+    height: 24rem;
+    display: flex;
+    width: 24rem;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.image_container {
+
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+
+.arrowContainer {
+
+    width: fit-content;
+    position: absolute;
+    display: flex;
+    gap: 22rem;
+    transform: translateY(13rem) translateX(-30px);
+}
+
+.arrow {
+    cursor: pointer;
+    display: none;
+    background: white;
+    padding: 11px 16px 11px 14px;
+    border-radius: 50%;
+}
+
+
+.product_details {
+
+    padding: 40px 170px 81px 0px;
+}
+
+.product_details_container {
+
+    height: 100%;
+}
+
+.product {
+    width: 24rem;
+    border-radius: 8px;
+    position: absolute;
+    transition-timing-function: linear;
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+
+.in-header {
+    font-size: 11px;
+    color: var(--Orange);
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+
+
+.title {
+    color: var(--Black);
+    font-size: 18px;
+    line-height: 1;
+    margin-top: 16px;
+
+}
+
+.description {
+    color: hsl(0deg 0% 0% / 65%);
+    opacity: 0.8;
+    font-size: 15px;
+    font-weight: 600;
+
+    line-height: 1.3;
+
+}
+
+.price_container {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    margin-bottom: 5px;
+
+}
+
+.price {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+
+.discount {
+    background-color: var(--Pale-orange);
+    text-align: center;
+    font-size: 12px;
+    padding: 2px 4px 2px 4px;
+    font-weight: 600;
+    border-radius: 5px;
+    color: var(--Orange);
+}
+
+.markedprice {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--Black);
+    opacity: 0.4;
+}
+
+.selector {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+
+.thumnail_container {
+    display: flex;
+    justify-content: space-between;
+    height: 65px;
+}
+
+.thumnail {
+    width: 59px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.active {
+    border: 2px solid var(--Orange);
+    opacity: 0.5;
+}
+
+.add_to_cart {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--Orange);
+    color: var(--White);
+    width: 50%;
+    justify-content: center;
+    height: 40px;
+    border-radius: 7px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    min-width: 9rem;
+}
+
+
+.add_to_cart:hover .cartsvg {
+    fill: black;
+    color: black;
+    
+}
+
+.cart {
+    cursor: pointer;
+   
+}
+.cartfill{
+    display: none;
+}
+
+
+.cart:hover .cartfill {
+    fill: black;
+}
+
+.cartsvg {
+    transform: scale(0.8);
+}
+
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+.overlay {
+    position: fixed;
+    background-color: var(--Black);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    opacity: 0.7;
+    display: none;
+}
+
+.overlayACtive {
+    z-index: 2;
+    transform: scale(1.2) translateX(15rem);
+}
+
+
+.close {
+    position: absolute;
+    z-index: 2;
+    transform: translateX(23rem) translateY(-22px);
+    display: none;
+    cursor: pointer;
+}
+
+.activeDisplay {
+    display: block;
+}
+
+.number_of_item {
+    height: 26px;
+    width: 23px;
+    text-align: center;
+}
+
+.adder {
+    cursor: pointer;
+    padding: 17px 17px 18px 15px;
+}
+
+.adder:hover {
+    background-color: #ebebeb;
+}
+
+
+.cart_query {
+    position: absolute;
+    transform: translateX(-10rem) translateY(1rem);
+    padding: 8px 13px 23px 11px;
+    display: none;
+    flex-direction: column;
+    gap: 19px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 32px #dbdbdb;
+
+}
+
+.cart_name {
+    font-size: 18px;
+    border: solid #dfdfdf;
+    border-width: 0 0 1.9px 0px;
+    padding: 15px 0px 18px 4px;
+    z-index: 1;
+}
+
+
+
+.checkoutitem {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+
+.item_to_checkout_thumbnail {
+    width: 40px;
+    border-radius: 4px;
+}
+
+
+.item_to_checkout_name {
+    font-size: 14px;
+    color: #646060;
+    width: max-content;
+    margin-bottom: 5px;
+}
+
+.item_to_checkout_price {
+    font-size: 13px;
+    color: #646060;
+}
+
+
+.item_to_checkout_totalCost {
+    margin-left: 8px;
+    font-size: 14px;
+    color: black;
+    font-weight: 600;
+}
+
+.checkout_btn {
+    align-self: center;
+    background-color: var(--Orange);
+    color: var(--White);
+    width: 62%;
+    height: 40px;
+    border-radius: 7px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+.delete_button {
+    cursor: pointer;
+    margin: 5px;
+}
+
+
+
+.delete_button:hover {
+    fill: black;
+}
+
+.countactive {
+    opacity: 1;
+}
+
+.emptycart {
+    display: none;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    height: 100%;
+
+    justify-content: center;
+    align-items: center;
+    background: white;
+    font-weight: 600;
+    color: #000000b3;
+}
+
+.activempty {
+    display: flex;
+}
+
+
+
+@media (max-width:1150px) {
+
+    .navbar_contaniner {
+        padding: 0 10px 0 10px;
+    }
+
+    .list {
+        flex: 1;
+        display: none;
+    }
+
+    .section_two {
+        display: flex;
+        padding: 15px 0px 0px 14px;
+        gap: 3rem;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .thumnail_container {
+        display: none;
+        justify-content: space-between;
+    }
+
+    .arrow {
+        cursor: pointer;
+        display: block;
+        background: white;
+        padding: 11px 16px 11px 14px;
+        border-radius: 50%;
+    }
+
+    .product_image_container {
+        height: 19rem;
+        display: flex;
+        width: 19rem;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .product {
+        width: 19rem;
+        border-radius: 8px;
+        position: absolute;
+        transition-timing-function: linear;
+        transition-duration: 0.3s;
+        cursor: pointer;
+        pointer-events: none;
+    }
+
+    .arrowContainer {
+        width: fit-content;
+        position: absolute;
+        display: flex;
+        gap: 17rem;
+        transform: translateY(8rem) translateX(-30px);
+    }
+
+    .product_details {
+        padding: 0px 17px 58px 8px;
+    }
+
+
+
+    .selector {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        flex-direction: column;
+    }
+
+    .item_selector {
+        background-color: var(--Light-grayish-blue);
+        display: flex;
+        align-items: center;
+        gap: 26px;
+        /* padding: 10px 9px 10px 9px; */
+        border-radius: 5px;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .add_to_cart {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background-color: var(--Orange);
+        color: var(--White);
+        width: 100%;
+        justify-content: center;
+        height: 49px;
+        border-radius: 7px;
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        cursor: pointer;
+        min-width: 9rem;
+    }
+
+    .navbar {
+        border: solid #00000024;
+        display: flex;
+        align-items: center;
+        gap: 45px;
+        border-width: 0 0 2px 0px;
+        justify-content: space-around;
+    }
+
+
+    .title {
+        color: var(--Black);
+        font-size: 33px;
+        line-height: 1;
+        margin-top: 16px;
+    }
+
+    .cart_query {
+        position: absolute;
+        transform: translateX(-12rem) translateY(1rem);
+        padding: 8px 13px 23px 11px;
+        display: none;
+        flex-direction: column;
+        gap: 19px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 0 32px #dbdbdb;
+        z-index: 3;
+    }
+
+    .activempty {
+        display: flex;
+    }
+
+}
+
+
+/* overview */
+
+.main-class {
+    zoom: 85%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 85%;
+
+        }
+
+        .all {
+
+
+
+            height: 650px;
+            width: 773px;
+            background-color: white;
+            margin: 5px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            position: relative;
+            top: 10px;
+
+        }
+        .ille{
+            margin-left: 10px;
+        }
+
+        .main2 {
+
+            position: relative;
+            text-align: center;
+
+
+        }
+
+        .txt-1 {
+            display: flex;
+            height: 700px;
+            width: 900px;
+            padding: 20px;
+            margin: 10px;
+        }
+
+        .desc {
+            position: relative;
+
+
+
+            height: 700px;
+            width: 750px;
+            background-color: white;
+            margin: 20px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+
+        }
+
+        hr {
+            max-width: 773px;
+            color: aqua;
+            height: 2px;
+            align-items: left;
+            background: color #272727;
+            ;
+            margin-left: 0px;
+        }
+
+        .all .txt-1 .half1 {
+
+            position: relative;
+
+            width: 403px;
+            height: 400px;
+            padding: 10px;
+
+        }
+
+        .all .txt-1 .half2 {
+
+            width: 350px;
+            height: 400px;
+            padding: 10px;
+        }
+
+        .half1 h1 {
+            margin: 20px;
+            font-size: 20px;
+
+        }
+
+        .half2 h1 {
+            margin: 20px;
+            font-size: 20px;
+        }
+
+        .desc p {
+            font-size: 20px;
+            padding: 20px;
+        }
+
+        
+
+
+
+
+
+
+        @media (max-width: 1150px) {
+            body {
+                flex-direction: column;
+            }
+
+            .main-class {
+                flex-direction: column;
+            }
+
+            .all {
+                flex-direction: column;
+                width: auto;
+                height: auto;
+            }
+
+            .txt-1 {
+                flex-direction: column;
+                height: auto;
+                width: auto;
+            }
+        }
+/*comment section*/
+section {
+    
+    width: 100%;
+	padding-bottom:5em;
+    font-size: 24px;
+}
+h2 {
+    color: #1a0e0e;
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0;
+    line-height: normal;
+	text-transform:none;
+}
+h2 span {
+    display: block;
+    padding: 0;
+    font-size: 18px;
+    opacity: 0.7;
+    margin-top: 5px;
+	text-transform:uppercase;
+}
+
+#float-right{
+	float:right;	
+}
+
+/* ******************************************************
+	Script Top
+*********************************************************/
+
+.ScriptTop {
+    background: #fff none repeat scroll 0 0;
+    float: left;
+    font-size: 0.69em;
+    font-weight: 600;
+    line-height: 2.2;
+    padding: 12px 0;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+/* To Navigation Style 1*/
+.ScriptTop ul {
+    margin: 24px 0;
+    padding: 0;
+    text-align: left;
+}
+.ScriptTop li{
+	list-style:none;	
+	display:inline-block;
+}
+.ScriptTop li a {
+    background: #6a4aed none repeat scroll 0 0;
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 5px 18px;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+.ScriptTop li a:hover{
+	background:#000;
+	color:#fff;
+}
+
+
+/* ******************************************************
+	Script Header
+*********************************************************/
+
+.ScriptHeader {
+    float: left;
+    width: 100%;
+    padding: 2em 0;
+}
+.rt-heading {
+    margin: 0 auto;
+	text-align:center;
+}
+.Scriptcontent{
+	line-height:28px;	
+}
+.ScriptHeader h1{
+	font-family: "brandon-grotesque", "Brandon Grotesque", "Source Sans Pro", "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+    color: #6a4aed;
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0;
+    line-height: normal;
+
+}
+.ScriptHeader h2 {
+    color: #312c8f;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 5px 0 0;
+    line-height: normal;
+
+}
+.ScriptHeader h1 span {
+    display: block;
+    padding: 0;
+    font-size: 22px;
+    opacity: 0.7;
+    margin-top: 5px;
+
+}
+.ScriptHeader span {
+    display: block;
+    padding: 0;
+    font-size: 22px;
+    opacity: 0.7;
+    margin-top: 5px;
+}
+
+
+
+
+/* ******************************************************
+	Live Demo
+*********************************************************/
+
+
+
+
+
+/* ******************************************************
+	Responsive Grids
+*********************************************************/
+
+.rt-container {
+	margin: 0 auto;
+	padding-left:12px;
+	padding-right:12px;
+}
+.rt-row:before, .rt-row:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+
+.rt-row:after {
+  clear: both;
+}
+[class^="col-rt-"] {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  padding: 0 15px;
+  min-height: 1px;
+  position: relative;
+}
+
+
+@media (min-width: 1150px) {
+  .rt-container {
+    width: 750px;
+  }
+  [class^="col-rt-"] {
+    float: left;
+    width: 49.9999999999%;
+  }
+  .col-rt-6, .col-rt-12 {
+    width: 100%;
+  }
+  
+}
+
+@media (min-width:1150px) {
+	.rt-container {
+		width: 1170px;
+	}
+	.col-rt-1 {
+		width:16.6%;
+	}
+	.col-rt-2 {
+		width:30.33%;
+	}
+	.col-rt-3 {
+		width:50%;
+	}
+	.col-rt-4 {
+		width: 67.664%;
+	}
+	.col-rt-5 {
+		width: 83.33%;
+	}
+	
+
+}
+
+@media only screen and (min-width:240px) and (max-width: 768px){
+	 .ScriptTop h1, .ScriptTop ul {
+		text-align: center;
+	}
+	.ScriptTop h1{
+		margin-top:0;
+		margin-bottom:15px;
+	}
+	.ScriptTop ul{
+		 margin-top:12px;		
+	}
+	
+	.ScriptHeader h1,
+	.ScriptHeader h2, 
+	.scriptnav ul{
+		text-align:center;	
+	}
+	.scriptnav ul{
+		 margin-top:12px;		
+	}
+	#float-right{
+		float:none;	
+	}
+	
+}
+
+ .Container 
+ {
+  display: flex;
+          flex-direction: row;
+          
+          
+   background-color: #f5f6f6;
+          width: 600px;
+          border: 2px solid #333;
+          padding: 15px 10px;
+
+      }
+      .Container h2 {
+          text-align: center;
+          margin-bottom: 15px;
+      }
+      textarea {
+          height: 20px;
+          width: 100%;
+          border: none;
+          border-bottom: 2px solid #aaaa;
+          background-color: transparent;
+          margin-bottom: 20px;
+          resize: none;
+          outline: none;
+          transition: .5s;
+      }
+      input[type="submit"],button {
+          padding: 10px 15px;
+          border: none;
+          outline: none;
+          border-radius: 5px;
+          text-transform: uppercase;
+          font-weight: bold;
+          cursor: pointer;
+      }
+      input[type="submit"] {
+          color: #fff;
+          background-color: #273c75;
+      }
+      button{
+          color: #333;
+          background-color: transparent;
+      }
+
+      .btn{
+          display:none;
+      }
+      .record {
+          display: flex;
+          flex-direction: column;
+      }
+
+      .ask-question{
+        padding-left: 25px;
+     
+      height: 48px;
+      
+      resize: vertical;
+      margin: 16px;
+      overflow: visible;
+      font-size: larger;
+      padding-left: 25px;
+        margin: 16px;
+      }
+      
+     
+      
+     
+      .record-txt{
+          font-weight: bold;
+      }
+    
+    
+ .container {
+	max-width: 640px;
+	margin: 30px auto;
+	background: #fff;
+	border-radius: 8px;
+	padding: 20px;
+}
+
+
+
+.comment {
+	display: block;
+	transition: all 1s;
+}
+
+.commentClicked {
+	min-height: 0px;
+	border: 1px solid #eee;
+	border-radius: 5px;
+	padding: 5px 10px
+}
+
+textarea {
+	width: 100%;
+	border: none;
+	background: #E8E8E8;
+	padding: 5px 10px;
+	height: 50%;
+	border-radius: 5px 5px 0px 0px;
+	border-bottom: 2px solid #016BA8;
+	transition: all 0.5s;
+	margin-top: 15px;
+}
+
+button.primaryContained {
+	background: #016ba8;
+	color: #fff;
+	padding: 10px 10px;
+	border: none;
+	margin-top: 0px;
+	cursor: pointer;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.25);
+	transition: 1s all;
+	font-size: 10px;
+	border-radius: 5px;
+}
+
+button.primaryContained:hover {
+	background: #9201A8;
+}
+
+/*footer section*/
+
+
+
+        .info {
+            position: relative;
+        }
+
+        .info li {
+            display: grid;
+            grid-template-columns: 30px 1fr;
+            margin-bottom: 2px;
+        }
+
+        .info li span:nth-child(1) {
+            color: black;
+            font-size: 20px;
+        }
+
+        .info li span {
+            color: black;
+        }
+
+        .info a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .info a:hover {
+            color: #ffeb3b;
+        }
+
+      
+    </style>
+
+</head>
+
+<body>
+    <div class="header">
+        <a href="index.html" class="logo">Buy & Sell</a>
+
+        <select name="cities" id="cities" placeholder="City" style="
+          background: url(https://img.icons8.com/material-outlined/24/undefined/marker.png)
+            no-repeat left;
+          width: 264px;
+          padding: 17px;
+          size: 100%;
+          border-width: 3px;
+          margin: 15px;
+          @media screen and (max-width: 1040px) {
+            height: 15px;
+          }
+        ">
+            <option value="Adilabad">Adilabad</option>
+            <option value="Agra">Agra</option>
+            <option value="Ahmedabad">Ahmedabad</option>
+            <option value="Ahmednagar">Ahmednagar</option>
+            <option value="Aizawl">Aizawl</option>
+            <option value="Ajitgarh(Mohali)">Ajitgarh (Mohali)</option>
+            <option value="Ajmer">Ajmer</option>
+            <option value="Akola">Akola</option>
+            <option value="Alappuzha">Alappuzha</option>
+            <option value="Aligarh">Aligarh</option>
+            <option value="Alirajpur">Alirajpur</option>
+            <option value="Allahabad">Allahabad</option>
+            <option value="Almora">Almora</option>
+            <option value="Alwar">Alwar</option>
+            <option value="Ambala">Ambala</option>
+            <option value="AmbedkarNagar">Ambedkar Nagar</option>
+            <option value="Amravati">Amravati</option>
+            <option value="Amrelidistrict">Amreli district</option>
+            <option value="Amritsar">Amritsar</option>
+            <option value="Anand">Anand</option>
+            <option value="Anantapur">Anantapur</option>
+            <option value="Anantnag">Anantnag</option>
+            <option value="Angul">Angul</option>
+            <option value="Anjaw">Anjaw</option>
+            <option value="Anuppur">Anuppur</option>
+            <option value="Araria">Araria</option>
+            <option value="Ariyalur">Ariyalur</option>
+            <option value="Arwal">Arwal</option>
+            <option value="AshokNagar">Ashok Nagar</option>
+            <option value="Auraiya">Auraiya</option>
+            <option value="Aurangabad">Aurangabad</option>
+            <option value="Aurangabad">Aurangabad</option>
+            <option value="Azamgarh">Azamgarh</option>
+            <option value="Badgam">Badgam</option>
+            <option value="Bagalkot">Bagalkot</option>
+            <option value="Bageshwar">Bageshwar</option>
+            <option value="Bagpat">Bagpat</option>
+            <option value="Bahraich">Bahraich</option>
+            <option value="Baksa">Baksa</option>
+            <option value="Balaghat">Balaghat</option>
+            <option value="Balangir">Balangir</option>
+            <option value="Balasore">Balasore</option>
+            <option value="Ballia">Ballia</option>
+            <option value="Balrampur">Balrampur</option>
+            <option value="Banaskantha">Banaskantha</option>
+            <option value="Banda">Banda</option>
+            <option value="Bandipora">Bandipora</option>
+            <option value="BangaloreRural">Bangalore Rural</option>
+            <option value="BangaloreUrban">Bangalore Urban</option>
+            <option value="Banka">Banka</option>
+            <option value="Bankura">Bankura</option>
+            <option value="Banswara">Banswara</option>
+            <option value="Barabanki">Barabanki</option>
+            <option value="Baramulla">Baramulla</option>
+            <option value="Baran">Baran</option>
+            <option value="Bardhaman">Bardhaman</option>
+            <option value="Bareilly">Bareilly</option>
+            <option value="Bargarh(Baragarh)">Bargarh (Baragarh)</option>
+            <option value="Barmer">Barmer</option>
+            <option value="Barnala">Barnala</option>
+            <option value="Barpeta">Barpeta</option>
+            <option value="Barwani">Barwani</option>
+            <option value="Bastar">Bastar</option>
+            <option value="Basti">Basti</option>
+            <option value="Bathinda">Bathinda</option>
+            <option value="Beed">Beed</option>
+            <option value="Begusarai">Begusarai</option>
+            <option value="Belgaum">Belgaum</option>
+            <option value="Bellary">Bellary</option>
+            <option value="Betul">Betul</option>
+            <option value="Bhadrak">Bhadrak</option>
+            <option value="Bhagalpur">Bhagalpur</option>
+            <option value="Bhandara">Bhandara</option>
+            <option value="Bharatpur">Bharatpur</option>
+            <option value="Bharuch">Bharuch</option>
+            <option value="Bhavnagar">Bhavnagar</option>
+            <option value="Bhilwara">Bhilwara</option>
+            <option value="Bhind">Bhind</option>
+            <option value="Bhiwani">Bhiwani</option>
+            <option value="Bhojpur">Bhojpur</option>
+            <option value="Bhopal">Bhopal</option>
+            <option value="Bidar">Bidar</option>
+            <option value="Bijapur">Bijapur</option>
+            <option value="Bijapur">Bijapur</option>
+            <option value="Bijnor">Bijnor</option>
+            <option value="Bikaner">Bikaner</option>
+            <option value="Bilaspur">Bilaspur</option>
+            <option value="Bilaspur">Bilaspur</option>
+            <option value="Birbhum">Birbhum</option>
+            <option value="Bishnupur">Bishnupur</option>
+            <option value="Bokaro">Bokaro</option>
+            <option value="Bongaigaon">Bongaigaon</option>
+            <option value="Boudh(Bauda)">Boudh (Bauda)</option>
+            <option value="Budaun">Budaun</option>
+            <option value="Bulandshahr">Bulandshahr</option>
+            <option value="Buldhana">Buldhana</option>
+            <option value="Bundi">Bundi</option>
+            <option value="Burhanpur">Burhanpur</option>
+            <option value="Buxar">Buxar</option>
+            <option value="Cachar">Cachar</option>
+            <option value="CentralDelhi">Central Delhi</option>
+            <option value="Chamarajnagar">Chamarajnagar</option>
+            <option value="Chamba">Chamba</option>
+            <option value="Chamoli">Chamoli</option>
+            <option value="Champawat">Champawat</option>
+            <option value="Champhai">Champhai</option>
+            <option value="Chandauli">Chandauli</option>
+            <option value="Chandel">Chandel</option>
+            <option value="Chandigarh">Chandigarh</option>
+            <option value="Chandrapur">Chandrapur</option>
+            <option value="Changlang">Changlang</option>
+            <option value="Chatra">Chatra</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Chhatarpur">Chhatarpur</option>
+            <option value="ChhatrapatiShahujiMaharajNagar">
+                Chhatrapati Shahuji Maharaj Nagar
+            </option>
+            <option value="Chhindwara">Chhindwara</option>
+            <option value="Chikkaballapur">Chikkaballapur</option>
+            <option value="Chikkamagaluru">Chikkamagaluru</option>
+            <option value="Chirang">Chirang</option>
+            <option value="Chitradurga">Chitradurga</option>
+            <option value="Chitrakoot">Chitrakoot</option>
+            <option value="Chittoor">Chittoor</option>
+            <option value="Chittorgarh">Chittorgarh</option>
+            <option value="Churachandpur">Churachandpur</option>
+            <option value="Churu">Churu</option>
+            <option value="Coimbatore">Coimbatore</option>
+            <option value="CoochBehar">Cooch Behar</option>
+            <option value="Cuddalore">Cuddalore</option>
+            <option value="Cuttack">Cuttack</option>
+            <option value="DadraandNagarHaveli">Dadra and Nagar Haveli</option>
+            <option value="Dahod">Dahod</option>
+            <option value="DakshinDinajpur">Dakshin Dinajpur</option>
+            <option value="DakshinaKannada">Dakshina Kannada</option>
+            <option value="Daman">Daman</option>
+            <option value="Damoh">Damoh</option>
+            <option value="Dantewada">Dantewada</option>
+            <option value="Darbhanga">Darbhanga</option>
+            <option value="Darjeeling">Darjeeling</option>
+            <option value="Darrang">Darrang</option>
+            <option value="Datia">Datia</option>
+            <option value="Dausa">Dausa</option>
+            <option value="Davanagere">Davanagere</option>
+            <option value="Debagarh(Deogarh)">Debagarh (Deogarh)</option>
+            <option value="Dehradun">Dehradun</option>
+            <option value="Deoghar">Deoghar</option>
+            <option value="Deoria">Deoria</option>
+            <option value="Dewas">Dewas</option>
+            <option value="Dhalai">Dhalai</option>
+            <option value="Dhamtari">Dhamtari</option>
+            <option value="Dhanbad">Dhanbad</option>
+            <option value="Dhar">Dhar</option>
+            <option value="Dharmapuri">Dharmapuri</option>
+            <option value="Dharwad">Dharwad</option>
+            <option value="Dhemaji">Dhemaji</option>
+            <option value="Dhenkanal">Dhenkanal</option>
+            <option value="Dholpur">Dholpur</option>
+            <option value="Dhubri">Dhubri</option>
+            <option value="Dhule">Dhule</option>
+            <option value="DibangValley">Dibang Valley</option>
+            <option value="Dibrugarh">Dibrugarh</option>
+            <option value="DimaHasao">Dima Hasao</option>
+            <option value="Dimapur">Dimapur</option>
+            <option value="Dindigul">Dindigul</option>
+            <option value="Dindori">Dindori</option>
+            <option value="Diu">Diu</option>
+            <option value="Doda">Doda</option>
+            <option value="Dumka">Dumka</option>
+            <option value="Dungapur">Dungapur</option>
+            <option value="Durg">Durg</option>
+            <option value="EastChamparan">East Champaran</option>
+            <option value="EastDelhi">East Delhi</option>
+            <option value="EastGaroHills">East Garo Hills</option>
+            <option value="EastKhasiHills">East Khasi Hills</option>
+            <option value="EastSiang">East Siang</option>
+            <option value="EastSikkim">East Sikkim</option>
+            <option value="EastSinghbhum">East Singhbhum</option>
+            <option value="Eluru">Eluru</option>
+            <option value="Ernakulam">Ernakulam</option>
+            <option value="Erode">Erode</option>
+            <option value="Etah">Etah</option>
+            <option value="Etawah">Etawah</option>
+            <option value="Faizabad">Faizabad</option>
+            <option value="Faridabad">Faridabad</option>
+            <option value="Faridkot">Faridkot</option>
+            <option value="Farrukhabad">Farrukhabad</option>
+            <option value="Fatehabad">Fatehabad</option>
+            <option value="FatehgarhSahib">Fatehgarh Sahib</option>
+            <option value="Fatehpur">Fatehpur</option>
+            <option value="Fazilka">Fazilka</option>
+            <option value="Firozabad">Firozabad</option>
+            <option value="Firozpur">Firozpur</option>
+            <option value="Gadag">Gadag</option>
+            <option value="Gadchiroli">Gadchiroli</option>
+            <option value="Gajapati">Gajapati</option>
+            <option value="Ganderbal">Ganderbal</option>
+            <option value="Gandhinagar">Gandhinagar</option>
+            <option value="Ganganagar">Ganganagar</option>
+            <option value="Ganjam">Ganjam</option>
+            <option value="Garhwa">Garhwa</option>
+            <option value="GautamBuddhNagar">Gautam Buddh Nagar</option>
+            <option value="Gaya">Gaya</option>
+            <option value="Ghaziabad">Ghaziabad</option>
+            <option value="Ghazipur">Ghazipur</option>
+            <option value="Giridih">Giridih</option>
+            <option value="Goalpara">Goalpara</option>
+            <option value="Godda">Godda</option>
+            <option value="Golaghat">Golaghat</option>
+            <option value="Gonda">Gonda</option>
+            <option value="Gondia">Gondia</option>
+            <option value="Gopalganj">Gopalganj</option>
+            <option value="Gorakhpur">Gorakhpur</option>
+            <option value="Gulbarga">Gulbarga</option>
+            <option value="Gumla">Gumla</option>
+            <option value="Guna">Guna</option>
+            <option value="Guntur">Guntur</option>
+            <option value="Gurdaspur">Gurdaspur</option>
+            <option value="Gurgaon">Gurgaon</option>
+            <option value="Gwalior">Gwalior</option>
+            <option value="Hailakandi">Hailakandi</option>
+            <option value="Hamirpur">Hamirpur</option>
+            <option value="Hamirpur">Hamirpur</option>
+            <option value="Hanumangarh">Hanumangarh</option>
+            <option value="Harda">Harda</option>
+            <option value="Hardoi">Hardoi</option>
+            <option value="Haridwar">Haridwar</option>
+            <option value="Hassan">Hassan</option>
+            <option value="Haveridistrict">Haveri district</option>
+            <option value="Hazaribag">Hazaribag</option>
+            <option value="Hingoli">Hingoli</option>
+            <option value="Hissar">Hissar</option>
+            <option value="Hooghly">Hooghly</option>
+            <option value="Hoshangabad">Hoshangabad</option>
+            <option value="Hoshiarpur">Hoshiarpur</option>
+            <option value="Howrah">Howrah</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Idukki">Idukki</option>
+            <option value="ImphalEast">Imphal East</option>
+            <option value="ImphalWest">Imphal West</option>
+            <option value="Indore">Indore</option>
+            <option value="Jabalpur">Jabalpur</option>
+            <option value="Jagatsinghpur">Jagatsinghpur</option>
+            <option value="JaintiaHills">Jaintia Hills</option>
+            <option value="Jaipur">Jaipur</option>
+            <option value="Jaisalmer">Jaisalmer</option>
+            <option value="Jajpur">Jajpur</option>
+            <option value="Jalandhar">Jalandhar</option>
+            <option value="Jalaun">Jalaun</option>
+            <option value="Jalgaon">Jalgaon</option>
+            <option value="Jalna">Jalna</option>
+            <option value="Jalore">Jalore</option>
+            <option value="Jalpaiguri">Jalpaiguri</option>
+            <option value="Jammu">Jammu</option>
+            <option value="Jamnagar">Jamnagar</option>
+            <option value="Jamtara">Jamtara</option>
+            <option value="Jamui">Jamui</option>
+            <option value="Janjgir-Champa">Janjgir-Champa</option>
+            <option value="Jashpur">Jashpur</option>
+            <option value="Jaunpurdistrict">Jaunpur district</option>
+            <option value="Jehanabad">Jehanabad</option>
+            <option value="Jhabua">Jhabua</option>
+            <option value="Jhajjar">Jhajjar</option>
+            <option value="Jhalawar">Jhalawar</option>
+            <option value="Jhansi">Jhansi</option>
+            <option value="Jharsuguda">Jharsuguda</option>
+            <option value="Jhunjhunu">Jhunjhunu</option>
+            <option value="Jind">Jind</option>
+            <option value="Jodhpur">Jodhpur</option>
+            <option value="Jorhat">Jorhat</option>
+            <option value="Junagadh">Junagadh</option>
+            <option value="JyotibaPhuleNagar">Jyotiba Phule Nagar</option>
+            <option value="Kabirdham(formerlyKawardha)">
+                Kabirdham (formerly Kawardha)
+            </option>
+            <option value="Kadapa">Kadapa</option>
+            <option value="Kaimur">Kaimur</option>
+            <option value="Kaithal">Kaithal</option>
+            <option value="Kakinada">Kakinada</option>
+            <option value="Kalahandi">Kalahandi</option>
+            <option value="Kamrup">Kamrup</option>
+            <option value="KamrupMetropolitan">Kamrup Metropolitan</option>
+            <option value="Kanchipuram">Kanchipuram</option>
+            <option value="Kandhamal">Kandhamal</option>
+            <option value="Kangra">Kangra</option>
+            <option value="Kanker">Kanker</option>
+            <option value="Kannauj">Kannauj</option>
+            <option value="Kannur">Kannur</option>
+            <option value="Kanpur">Kanpur</option>
+            <option value="KanshiRamNagar">Kanshi Ram Nagar</option>
+            <option value="Kanyakumari">Kanyakumari</option>
+            <option value="Kapurthala">Kapurthala</option>
+            <option value="Karaikal">Karaikal</option>
+            <option value="Karauli">Karauli</option>
+            <option value="KarbiAnglong">Karbi Anglong</option>
+            <option value="Kargil">Kargil</option>
+            <option value="Karimganj">Karimganj</option>
+            <option value="Karimnagar">Karimnagar</option>
+            <option value="Karnal">Karnal</option>
+            <option value="Karur">Karur</option>
+            <option value="Kasaragod">Kasaragod</option>
+            <option value="Kathua">Kathua</option>
+            <option value="Katihar">Katihar</option>
+            <option value="Katni">Katni</option>
+            <option value="Kaushambi">Kaushambi</option>
+            <option value="Kendrapara">Kendrapara</option>
+            <option value="Kendujhar(Keonjhar)">Kendujhar (Keonjhar)</option>
+            <option value="Khagaria">Khagaria</option>
+            <option value="Khammam">Khammam</option>
+            <option value="Khandwa(EastNimar)">Khandwa (East Nimar)</option>
+            <option value="Khargone(WestNimar)">Khargone (West Nimar)</option>
+            <option value="Kheda">Kheda</option>
+            <option value="Khordha">Khordha</option>
+            <option value="Khowai">Khowai</option>
+            <option value="Khunti">Khunti</option>
+            <option value="Kinnaur">Kinnaur</option>
+            <option value="Kishanganj">Kishanganj</option>
+            <option value="Kishtwar">Kishtwar</option>
+            <option value="Kodagu">Kodagu</option>
+            <option value="Koderma">Koderma</option>
+            <option value="Kohima">Kohima</option>
+            <option value="Kokrajhar">Kokrajhar</option>
+            <option value="Kolar">Kolar</option>
+            <option value="Kolasib">Kolasib</option>
+            <option value="Kolhapur">Kolhapur</option>
+            <option value="Kolkata">Kolkata</option>
+            <option value="Kollam">Kollam</option>
+            <option value="Koppal">Koppal</option>
+            <option value="Koraput">Koraput</option>
+            <option value="Korba">Korba</option>
+            <option value="Koriya">Koriya</option>
+            <option value="Kota">Kota</option>
+            <option value="Kottayam">Kottayam</option>
+            <option value="Kozhikode">Kozhikode</option>
+            <option value="Krishna">Krishna</option>
+            <option value="Kulgam">Kulgam</option>
+            <option value="Kullu">Kullu</option>
+            <option value="Kupwara">Kupwara</option>
+            <option value="Kurnool">Kurnool</option>
+            <option value="Kurukshetra">Kurukshetra</option>
+            <option value="KurungKumey">Kurung Kumey</option>
+            <option value="Kushinagar">Kushinagar</option>
+            <option value="Kutch">Kutch</option>
+            <option value="LahaulandSpiti">Lahaul and Spiti</option>
+            <option value="Lakhimpur">Lakhimpur</option>
+            <option value="LakhimpurKheri">Lakhimpur Kheri</option>
+            <option value="Lakhisarai">Lakhisarai</option>
+            <option value="Lalitpur">Lalitpur</option>
+            <option value="Latehar">Latehar</option>
+            <option value="Latur">Latur</option>
+            <option value="Lawngtlai">Lawngtlai</option>
+            <option value="Leh">Leh</option>
+            <option value="Lohardaga">Lohardaga</option>
+            <option value="Lohit">Lohit</option>
+            <option value="LowerDibangValley">Lower Dibang Valley</option>
+            <option value="LowerSubansiri">Lower Subansiri</option>
+            <option value="Lucknow">Lucknow</option>
+            <option value="Ludhiana">Ludhiana</option>
+            <option value="Lunglei">Lunglei</option>
+            <option value="Madhepura">Madhepura</option>
+            <option value="Madhubani">Madhubani</option>
+            <option value="Madurai">Madurai</option>
+            <option value="MahamayaNagar">Mahamaya Nagar</option>
+            <option value="Maharajganj">Maharajganj</option>
+            <option value="Mahasamund">Mahasamund</option>
+            <option value="Mahbubnagar">Mahbubnagar</option>
+            <option value="Mahe">Mahe</option>
+            <option value="Mahendragarh">Mahendragarh</option>
+            <option value="Mahoba">Mahoba</option>
+            <option value="Mainpuri">Mainpuri</option>
+            <option value="Malappuram">Malappuram</option>
+            <option value="Maldah">Maldah</option>
+            <option value="Malkangiri">Malkangiri</option>
+            <option value="Mamit">Mamit</option>
+            <option value="Mandi">Mandi</option>
+            <option value="Mandla">Mandla</option>
+            <option value="Mandsaur">Mandsaur</option>
+            <option value="Mandya">Mandya</option>
+            <option value="Mansa">Mansa</option>
+            <option value="Marigaon">Marigaon</option>
+            <option value="Mathura">Mathura</option>
+            <option value="Mau">Mau</option>
+            <option value="Mayurbhanj">Mayurbhanj</option>
+            <option value="Medak">Medak</option>
+            <option value="Meerut">Meerut</option>
+            <option value="Mehsana">Mehsana</option>
+            <option value="Mewat">Mewat</option>
+            <option value="Mirzapur">Mirzapur</option>
+            <option value="Moga">Moga</option>
+            <option value="Mokokchung">Mokokchung</option>
+            <option value="Mon">Mon</option>
+            <option value="Moradabad">Moradabad</option>
+            <option value="Morena">Morena</option>
+            <option value="MumbaiCity">Mumbai City</option>
+            <option value="Mumbaisuburban">Mumbai suburban</option>
+            <option value="Munger">Munger</option>
+            <option value="Murshidabad">Murshidabad</option>
+            <option value="Muzaffarnagar">Muzaffarnagar</option>
+            <option value="Muzaffarpur">Muzaffarpur</option>
+            <option value="Mysore">Mysore</option>
+            <option value="Nabarangpur">Nabarangpur</option>
+            <option value="Nadia">Nadia</option>
+            <option value="Nagaon">Nagaon</option>
+            <option value="Nagapattinam">Nagapattinam</option>
+            <option value="Nagaur">Nagaur</option>
+            <option value="Nagpur">Nagpur</option>
+            <option value="Nainital">Nainital</option>
+            <option value="Nalanda">Nalanda</option>
+            <option value="Nalbari">Nalbari</option>
+            <option value="Nalgonda">Nalgonda</option>
+            <option value="Namakkal">Namakkal</option>
+            <option value="Nanded">Nanded</option>
+            <option value="Nandurbar">Nandurbar</option>
+            <option value="Narayanpur">Narayanpur</option>
+            <option value="Narmada">Narmada</option>
+            <option value="Narsinghpur">Narsinghpur</option>
+            <option value="Nashik">Nashik</option>
+            <option value="Navsari">Navsari</option>
+            <option value="Nawada">Nawada</option>
+            <option value="Nawanshahr">Nawanshahr</option>
+            <option value="Nayagarh">Nayagarh</option>
+            <option value="Neemuch">Neemuch</option>
+            <option value="Nellore">Nellore</option>
+            <option value="NewDelhi">New Delhi</option>
+            <option value="Nilgiris">Nilgiris</option>
+            <option value="Nizamabad">Nizamabad</option>
+            <option value="North24Parganas">North 24 Parganas</option>
+            <option value="NorthDelhi">North Delhi</option>
+            <option value="NorthEastDelhi">North East Delhi</option>
+            <option value="NorthGoa">North Goa</option>
+            <option value="NorthSikkim">North Sikkim</option>
+            <option value="NorthTripura">North Tripura</option>
+            <option value="NorthWestDelhi">North West Delhi</option>
+            <option value="Nuapada">Nuapada</option>
+            <option value="Ongole">Ongole</option>
+            <option value="Osmanabad">Osmanabad</option>
+            <option value="Pakur">Pakur</option>
+            <option value="Palakkad">Palakkad</option>
+            <option value="Palamu">Palamu</option>
+            <option value="Pali">Pali</option>
+            <option value="Palwal">Palwal</option>
+            <option value="Panchkula">Panchkula</option>
+            <option value="Panchmahal">Panchmahal</option>
+            <option value="PanchsheelNagardistrict(Hapur)">
+                Panchsheel Nagar district (Hapur)
+            </option>
+            <option value="Panipat">Panipat</option>
+            <option value="Panna">Panna</option>
+            <option value="PapumPare">Papum Pare</option>
+            <option value="Parbhani">Parbhani</option>
+            <option value="PaschimMedinipur">Paschim Medinipur</option>
+            <option value="Patan">Patan</option>
+            <option value="Pathanamthitta">Pathanamthitta</option>
+            <option value="Pathankot">Pathankot</option>
+            <option value="Patiala">Patiala</option>
+            <option value="Patna">Patna</option>
+            <option value="PauriGarhwal">Pauri Garhwal</option>
+            <option value="Perambalur">Perambalur</option>
+            <option value="Phek">Phek</option>
+            <option value="Pilibhit">Pilibhit</option>
+            <option value="Pithoragarh">Pithoragarh</option>
+            <option value="Pondicherry">Pondicherry</option>
+            <option value="Poonch">Poonch</option>
+            <option value="Porbandar">Porbandar</option>
+            <option value="Pratapgarh">Pratapgarh</option>
+            <option value="Pratapgarh">Pratapgarh</option>
+            <option value="Pudukkottai">Pudukkottai</option>
+            <option value="Pulwama">Pulwama</option>
+            <option value="Pune">Pune</option>
+            <option value="PurbaMedinipur">Purba Medinipur</option>
+            <option value="Puri">Puri</option>
+            <option value="Purnia">Purnia</option>
+            <option value="Purulia">Purulia</option>
+            <option value="Raebareli">Raebareli</option>
+            <option value="Raichur">Raichur</option>
+            <option value="Raigad">Raigad</option>
+            <option value="Raigarh">Raigarh</option>
+            <option value="Raipur">Raipur</option>
+            <option value="Raisen">Raisen</option>
+            <option value="Rajauri">Rajauri</option>
+            <option value="Rajgarh">Rajgarh</option>
+            <option value="Rajkot">Rajkot</option>
+            <option value="Rajnandgaon">Rajnandgaon</option>
+            <option value="Rajsamand">Rajsamand</option>
+            <option value="RamabaiNagar(KanpurDehat)">
+                Ramabai Nagar (Kanpur Dehat)
+            </option>
+            <option value="Ramanagara">Ramanagara</option>
+            <option value="Ramanathapuram">Ramanathapuram</option>
+            <option value="Ramban">Ramban</option>
+            <option value="Ramgarh">Ramgarh</option>
+            <option value="Rampur">Rampur</option>
+            <option value="Ranchi">Ranchi</option>
+            <option value="Ratlam">Ratlam</option>
+            <option value="Ratnagiri">Ratnagiri</option>
+            <option value="Rayagada">Rayagada</option>
+            <option value="Reasi">Reasi</option>
+            <option value="Rewa">Rewa</option>
+            <option value="Rewari">Rewari</option>
+            <option value="RiBhoi">Ri Bhoi</option>
+            <option value="Rohtak">Rohtak</option>
+            <option value="Rohtas">Rohtas</option>
+            <option value="Rudraprayag">Rudraprayag</option>
+            <option value="Rupnagar">Rupnagar</option>
+            <option value="Sabarkantha">Sabarkantha</option>
+            <option value="Sagar">Sagar</option>
+            <option value="Saharanpur">Saharanpur</option>
+            <option value="Saharsa">Saharsa</option>
+            <option value="Sahibganj">Sahibganj</option>
+            <option value="Saiha">Saiha</option>
+            <option value="Salem">Salem</option>
+            <option value="Samastipur">Samastipur</option>
+            <option value="Samba">Samba</option>
+            <option value="Sambalpur">Sambalpur</option>
+            <option value="Sangli">Sangli</option>
+            <option value="Sangrur">Sangrur</option>
+            <option value="SantKabirNagar">Sant Kabir Nagar</option>
+            <option value="SantRavidasNagar">Sant Ravidas Nagar</option>
+            <option value="Saran">Saran</option>
+            <option value="Satara">Satara</option>
+            <option value="Satna">Satna</option>
+            <option value="SawaiMadhopur">Sawai Madhopur</option>
+            <option value="Sehore">Sehore</option>
+            <option value="Senapati">Senapati</option>
+            <option value="Seoni">Seoni</option>
+            <option value="SeraikelaKharsawan">Seraikela Kharsawan</option>
+            <option value="Serchhip">Serchhip</option>
+            <option value="Shahdol">Shahdol</option>
+            <option value="Shahjahanpur">Shahjahanpur</option>
+            <option value="Shajapur">Shajapur</option>
+            <option value="Shamli">Shamli</option>
+            <option value="Sheikhpura">Sheikhpura</option>
+            <option value="Sheohar">Sheohar</option>
+            <option value="Sheopur">Sheopur</option>
+            <option value="Shimla">Shimla</option>
+            <option value="Shimoga">Shimoga</option>
+            <option value="Shivpuri">Shivpuri</option>
+            <option value="Shopian">Shopian</option>
+            <option value="Shravasti">Shravasti</option>
+            <option value="Sibsagar">Sibsagar</option>
+            <option value="Siddharthnagar">Siddharthnagar</option>
+            <option value="Sidhi">Sidhi</option>
+            <option value="Sikar">Sikar</option>
+            <option value="Simdega">Simdega</option>
+            <option value="Sindhudurg">Sindhudurg</option>
+            <option value="Singrauli">Singrauli</option>
+            <option value="Sirmaur">Sirmaur</option>
+            <option value="Sirohi">Sirohi</option>
+            <option value="Sirsa">Sirsa</option>
+            <option value="Sitamarhi">Sitamarhi</option>
+            <option value="Sitapur">Sitapur</option>
+            <option value="Sivaganga">Sivaganga</option>
+            <option value="Siwan">Siwan</option>
+            <option value="Solan">Solan</option>
+            <option value="Solapur">Solapur</option>
+            <option value="Sonbhadra">Sonbhadra</option>
+            <option value="Sonipat">Sonipat</option>
+            <option value="Sonitpur">Sonitpur</option>
+            <option value="South24Parganas">South 24 Parganas</option>
+            <option value="SouthDelhi">South Delhi</option>
+            <option value="SouthGaroHills">South Garo Hills</option>
+            <option value="SouthGoa">South Goa</option>
+            <option value="SouthSikkim">South Sikkim</option>
+            <option value="SouthTripura">South Tripura</option>
+            <option value="SouthWestDelhi">South West Delhi</option>
+            <option value="SriMuktsarSahib">Sri Muktsar Sahib</option>
+            <option value="Srikakulam">Srikakulam</option>
+            <option value="Srinagar">Srinagar</option>
+            <option value="Subarnapur(Sonepur)">Subarnapur (Sonepur)</option>
+            <option value="Sultanpur">Sultanpur</option>
+            <option value="Sundergarh">Sundergarh</option>
+            <option value="Supaul">Supaul</option>
+            <option value="Surat">Surat</option>
+            <option value="Surendranagar">Surendranagar</option>
+            <option value="Surguja">Surguja</option>
+            <option value="Tamenglong">Tamenglong</option>
+            <option value="TarnTaran">Tarn Taran</option>
+            <option value="Tawang">Tawang</option>
+            <option value="TehriGarhwal">Tehri Garhwal</option>
+            <option value="Thane">Thane</option>
+            <option value="Thanjavur">Thanjavur</option>
+            <option value="TheDangs">The Dangs</option>
+            <option value="Theni">Theni</option>
+            <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+            <option value="Thoothukudi">Thoothukudi</option>
+            <option value="Thoubal">Thoubal</option>
+            <option value="Thrissur">Thrissur</option>
+            <option value="Tikamgarh">Tikamgarh</option>
+            <option value="Tinsukia">Tinsukia</option>
+            <option value="Tirap">Tirap</option>
+            <option value="Tiruchirappalli">Tiruchirappalli</option>
+            <option value="Tirunelveli">Tirunelveli</option>
+            <option value="Tirupur">Tirupur</option>
+            <option value="Tiruvallur">Tiruvallur</option>
+            <option value="Tiruvannamalai">Tiruvannamalai</option>
+            <option value="Tiruvarur">Tiruvarur</option>
+            <option value="Tonk">Tonk</option>
+            <option value="Tuensang">Tuensang</option>
+            <option value="Tumkur">Tumkur</option>
+            <option value="Udaipur">Udaipur</option>
+            <option value="Udalguri">Udalguri</option>
+            <option value="UdhamSinghNagar">Udham Singh Nagar</option>
+            <option value="Udhampur">Udhampur</option>
+            <option value="Udupi">Udupi</option>
+            <option value="Ujjain">Ujjain</option>
+            <option value="Ukhrul">Ukhrul</option>
+            <option value="Umaria">Umaria</option>
+            <option value="Una">Una</option>
+            <option value="Unnao">Unnao</option>
+            <option value="UpperSiang">Upper Siang</option>
+            <option value="UpperSubansiri">Upper Subansiri</option>
+            <option value="UttarDinajpur">Uttar Dinajpur</option>
+            <option value="UttaraKannada">Uttara Kannada</option>
+            <option value="Uttarkashi">Uttarkashi</option>
+            <option value="Vadodara">Vadodara</option>
+            <option value="Vaishali">Vaishali</option>
+            <option value="Valsad">Valsad</option>
+            <option value="Varanasi">Varanasi</option>
+            <option value="Vellore">Vellore</option>
+            <option value="Vidisha">Vidisha</option>
+            <option value="Viluppuram">Viluppuram</option>
+            <option value="Virudhunagar">Virudhunagar</option>
+            <option value="Visakhapatnam">Visakhapatnam</option>
+            <option value="Vizianagaram">Vizianagaram</option>
+            <option value="Vyara">Vyara</option>
+            <option value="Warangal">Warangal</option>
+            <option value="Wardha">Wardha</option>
+            <option value="Washim">Washim</option>
+            <option value="Wayanad">Wayanad</option>
+            <option value="WestChamparan">West Champaran</option>
+            <option value="WestDelhi">West Delhi</option>
+            <option value="WestGaroHills">West Garo Hills</option>
+            <option value="WestKameng">West Kameng</option>
+            <option value="WestKhasiHills">West Khasi Hills</option>
+            <option value="WestSiang">West Siang</option>
+            <option value="WestSikkim">West Sikkim</option>
+            <option value="WestSinghbhum">West Singhbhum</option>
+            <option value="WestTripura">West Tripura</option>
+            <option value="Wokha">Wokha</option>
+            <option value="Yadgir">Yadgir</option>
+            <option value="YamunaNagar">Yamuna Nagar</option>
+            <option value="Yanam">Yanam</option>
+            <option value="Yavatmal">Yavatmal</option>
+            <option value="Zunheboto">Zunheboto</option>
+        </select>
+
+        <input type="text" class="icon-location" value placeholder="location"> 
+        <input type="text" class="icon-search" value placeholder="Search" />
+        <div class="header-right">
+            <a href="#LogIn"><b>LogIn</b></a>
+        </div>
+    </div>
+
+    <div class="topnav" id="myTopnav">
+
+        Menu
+
+        <div class="dropdown">
+
+            <!-- <div class="spacing"> -->
+            <button class="dropbtn">Mobile
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="tablet.html">Tablet</a>
+                <a href="andriod.html">Andriod</a>
+                <a href="iphone.html">Iphone</a>
+                <a href="accessories.html">Accesories</a>
+                <a href="see all mobile.html"><u>See all</u></a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Electronics
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="TV.html">TVs</a>
+                <a href="Fridge.html">Fridge</a>
+                <a href="ACs.html">ACs</a>
+                <a href="cameras & lens.html">Cameras & Lenses</a>
+                <a href="Computers & laptops.html">Computers & laptops</a>
+                <a href="See all electronics.html"><u>See all</u></a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Furniture
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="sofa.html">Sofa & Dining</a>
+                <a href="bed.html">Beds & Wardrobes</a>
+                <a href="homedecore.html">Home Decor & Garden</a>
+                <a href="kid furniture.html">Kids Furniture</a>
+                <a href="furniture seeall.html"><u>See all</u></a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Bikes
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="Motorcycle.html">Motorcycles</a>
+                <a href="scooter.html">Scooters</a>
+                <a href="s_parts.html">Spare Parts</a>
+                <a href="Bicycle.html">Bicycles</a>
+                <a href="All_bikes.html"><u>See all</u></a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Cars
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="automatic.html">Automatic</a>
+                <a href="manual.html">Manual</a>
+                <a href="see all  cars.html"><u>See all</u></a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Books, Sports and Hobbies
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="books.html">Books</a>
+                <a href="gym.html">Gym & Fitness</a>
+                <a href="sports.html">Sports Equipment</a>
+                <a href="other.html">Other Hobbies</a>
+                <a href="see all hobbies.html"><u>See all</u></a>
+            </div>
+        </div>
+        <!-- </div> -->
+        <a href="javascript:void(0);" style="font-size:20px;" class="icon" onclick="myFunction()">&#9776; Menu</a>
+
+    </div>
+
+    <!--Offers Section Starts-->
+    <!-- <div class="container1">
+        <input type="radio" id="i1" name="images" checked />
+        <input type="radio" id="i2" name="images" />
+        <input type="radio" id="i3" name="images" />
+        <input type="radio" id="i4" name="images" />
+        <input type="radio" id="i5" name="images" />
+
+        <div class="slide_img" id="one">
+            <img src="http://www.bhmpics.com/wallpapers/little_pony_art-800x480.jpg" />
+
+            <label class="prev" for="i5"><span>&#x2039;</span></label>
+            <label class="next" for="i2"><span>&#x203a;</span></label>
+        </div>
+
+        <div class="slide_img" id="two">
+            <img src="https://preview.ibb.co/e5OShF/cropped_800_480_111290.jpg " />
+
+            <label class="prev" for="i1"><span>&#x2039;</span></label>
+            <label class="next" for="i3"><span>&#x203a;</span></label>
+        </div>
+
+        <div class="slide_img" id="three">
+            <img src="http://wallpaperswide.com/download/up_house-wallpaper-1280x800.jpg" />
+
+            <label class="prev" for="i2"><span>&#x2039;</span></label>
+            <label class="next" for="i4"><span>&#x203a;</span></label>
+        </div>
+        <div class="slide_img" id="four">
+            <img src="http://wallpaperswide.com/download/big_hero_6_baymax-wallpaper-1152x720.jpg" />
+
+            <label class="prev" for="i3"><span>&#x2039;</span></label>
+            <label class="next" for="i5"><span>&#x203a;</span></label>
+        </div>
+        <div class="slide_img" id="five">
+            <img
+                src="https://cdn.gobankingrates.com/wp-content/uploads/2019/05/Davao-City-in-the-Phillippines-shutterstock_504042466.jpg" />
+
+            <label class="prev" for="i4"><span>&#x2039;</span></label>
+            <label class="next" for="i1"><span>&#x203a;</span></label>
+        </div>
+        <div id="nav_slide">
+            <label for="i1" class="dots" id="dot1"></label>
+            <label for="i2" class="dots" id="dot2"></label>
+            <label for="i3" class="dots" id="dot3"></label>
+            <label for="i4" class="dots" id="dot4"></label>
+            <label for="i5" class="dots" id="dot5"></label>
+        </div>
+    </div>
+
+    <br />
+    <br />
+    <br /><br />
+ -->
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+
+<main class="main">
+    <section class="navbar_contaniner">
+      <div class="cart_container">
+        <svg
+          class="cart"
+          width="22"
+          height="20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            class="cartfill"
+            d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
+            fill="#69707D"
+            fill-rule="nonzero"
+          /></svg>
+          <span class="count">0</span>
+        <section class="cart_query">
+          <h5 class="cart_name">cart</h5>
+          <div class="checkoutitem">
+            <div class="item_to_checkout_details">
+              <p class="item_to_checkout_name">
+                Fall Limited Edition Sneakers
+              </p>
+              <p class="item_to_checkout_price">
+                $125.00 x <span class="item_to_checkout_number">0</span
+                ><span class="item_to_checkout_totalCost">$125.00</span>
+              </p>
+            </div>
+
+            <svg
+              class="delete_button"
+              width="14"
+              height="16"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+            >
+              <defs>
+                <path
+                  class="delete_button"
+                  d="M0 2.625V1.75C0 1.334.334 1 .75 1h3.5l.294-.584A.741.741 0 0 1 5.213 0h3.571a.75.75 0 0 1 .672.416L9.75 1h3.5c.416 0 .75.334.75.75v.875a.376.376 0 0 1-.375.375H.375A.376.376 0 0 1 0 2.625Zm13 1.75V14.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 1 14.5V4.375C1 4.169 1.169 4 1.375 4h11.25c.206 0 .375.169.375.375ZM4.5 6.5c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Zm3 0c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Zm3 0c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Z"
+                  id="a"
+                />
+              </defs>
+              <use
+                class="delete_button"
+                fill="#C3CAD9"
+                fill-rule="nonzero"
+                xlink:href="#a"
+              />
+            </svg>
+          </div>
+          <div class="checkout_btn">Checkout</div>
+        </section>
+      </div>
+    </section>
+    <section class="section_two">
+      <div class="image_container">
+        <svg
+          class="close"
+          width="14"
+          height="15"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
+            fill="white"
+            fill-rule="evenodd"
+          />
+        </svg>
+        <div class="product_image_container">
+          <img class="product" src="./iphone1.jfif" alt="" />
+          <img class="product" src="./iphone2.jfif" alt="" />
+          <img class="product" src="./iphone3.jfif" alt="" />
+          <img class="product" src="./iphone4.jfif" alt="" />
+        </div>
+        <div class="arrowContainer">
+          <img class="arrow prevarrow" src="icon-previous.svg" alt="" />
+          <img class="arrow nextarrow" src="icon-next.svg" alt="" />
+        </div>
+        <div class="thumnail_container">
+          <img class="thumnail" data-slide="0" src="./iphone1.jfif" alt="" />
+          <img class="thumnail" data-slide="1" src="./iphone2.jfif" alt="" />
+          <img class="thumnail" data-slide="2" src="./iphone3.jfif" alt="" />
+          <img class="thumnail" data-slide="3" src="./iphone4.jfif" alt="" />
+        </div>
+      </div>
+      <div class="product_details">
+        <div class="product_details_container">
+          <b class="in-header">IPHONE COMAPANY</b>
+          <h2 class="title">If you don't have an iPhone, well, you don't have an iPhone.
+
+          </h2>
+          <br />
+
+          <p class="description">
+            These low-profile sneakers are your perfect casual wear companion.
+            Featuring a durable rubber outer sole, they’ll withstand
+            everything the weather can offer.
+          </p>
+          <br />
+          <div class="price_container">
+            <b class="price">$125.00</b><span class="discount">50%</span>
+          </div>
+
+          <strike class="markedprice">$250.00</strike>
+          <br />
+          <br />
+          <div class="selector">
+            <div class="add_to_cart">
+             
+                <path
+                  class="cartsvg"
+                  d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
+                  fill="white"
+                  fill-rule="nonzero"
+                />
+              </svg>
+              <span class="cartsvg" onclick="location.href='cart_page.html'"> Buy Now</span>
+            </div>
+            <div class="add_to_cart">
+             
+              <path
+                class="cartsvg"
+                d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
+                fill="white"
+                fill-rule="nonzero"
+              />
+            </svg>
+            <span class="cartsvg" onclick="location.href='cart_page.html'">Add To wishtlist</span>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div class="overlay"></div>
+
+  <!--
+<div class="attribution">
+  Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+  Coded by <a href="#">Your Name Here</a>.
+</div>-->
+  <script src="./apps.js"></script>
+
+
+  <section class="main-class">
+
+
+
+    <div class="all">
+        <h1 style="text-align: center; font-size:40px;margin-top: px;">Overview</h1>
+        <hr style="color: #000;; background: color #000;;">
+        </hr>
+
+        <div class="txt-1">
+
+            <div class="half1">
+                <h1>Brand &emsp;&emsp;&emsp;&emsp; &emsp; &emsp; &emsp; Apple</h1>
+                <hr>
+                </hr>
+                <h1>Model Name&emsp;&emsp;&emsp; &emsp; &emsp;Iphone 12 </h1>
+                <hr>
+                </hr>
+                <h1>Battery Rating &emsp;&emsp;&emsp;&emsp;2815</h1>
+                <hr>
+                </hr>
+                <h1>Form Factory &emsp;&emsp;&emsp;&emsp; Bar</h1>
+                <hr>
+                </hr>
+                <h1>Memory Storage&emsp;&emsp;&emsp;128GB</h1>
+                <hr>
+                </hr>
+                <h1>Ram &emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp; 64GB</h1>
+                <hr>
+                </hr>
+            </div>
+            <div class="half2">
+                <h1>Color&emsp;&emsp;&emsp;&emsp; &emsp; &emsp; &emsp; &emsp; Silver</h1>
+                <hr>
+                </hr>
+                <h1>Model Year &emsp;&emsp;&emsp;&emsp; &emsp; &emsp;2020</h1>
+                <hr>
+                </hr>
+                <h1>Screen Size &emsp;&emsp;&emsp;&emsp; &emsp; &emsp;6 inch</h1>
+                <hr>
+                </hr>
+                <h1>Country of Origin &emsp;&emsp;&emsp;India</h1>
+                <hr>
+                </hr>
+                <h1>Item weight &emsp;&emsp;&emsp;&emsp; &emsp; 310 g</h1>
+                <hr>
+                </hr>
+            </div>
+
+        </div>
+    </div>
+
+<div class="ille">
+    <div class="main2">
+        <div class="desc">
+            <h2 style="text-align: center; font-size: 40px;">Description</h2>
+            <hr style="background-color: #000;">
+            </hr>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea porro labore natus reprehenderit maiores
+                dolores magnam, id sunt eius animi hic aut facere consectetur dolore minus tempora eum harum. Ipsa?
+            </p>
+            
+        </div>
+    </div>
+</div>
+
+
+
+</section>
+<!--comment section-->
+<section id="app">
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <div class="comment">
+        <p v-for="items in item" v-text="items"></p>
+          </div><!--End Comment-->
+          </div><!--End col -->
+          </div><!-- End row -->
+      <div class="row">
+        <div class="col-6">
+            <h3>Leave Us a Comment</h3>
+            <textarea type="text" class="input" placeholder="Add Your Comment" v-model="newItem" @keyup.enter="addItem()"></textarea>
+            <div class="btn">
+            
+            <button v-on:click="addItem()"  class='primaryContained float-right' type="submit" >Comment</button>
+            <button class="clear-cmt" id="clear" >Cancel</button>
+            </div>
+            </div>
+            </div>
+            </div>
+            
+        
+    
+</section>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script>
+  $(document).ready(function()
+  { 
+
+    $(".primaryContained").on('click', function(){
+    $(".comment").addClass("commentClicked");
+    });//end click
+  
+  $("textarea").on('keyup.enter', function()
+  {
+    $(".comment").addClass("commentClicked");
+    
+  });//end keyup
+   
+});//End Function
+
+new Vue({
+        el: "#app",
+        data:{
+            title: 'Add a comment',
+            newItem: '',
+            item: [],
+        },
+        methods:{
+            addItem  (){
+            this.item.push(this.newItem);
+            this.newItem = "";
+            this.item.push("________________________________________________________________________");
+            this.newItem = "";
+        }
+     }
+
+});
+var field= document.querySelector('textarea');
+var backUp= field.getAttribute('placeholder');
+var btn = document.querySelector('.btn');
+var clear=document.getElementById('clear');
+
+field.onfocus = function(){
+
+    this.setAttribute('placeholder','');
+    this.style.borderColor='#333';
+    btn.style.display='block';
+}
+
+field.onblur = function() {
+    this.setAttribute('placeholder',backUp);
+    this.style.borderColor='#aaa';
+}
+
+clear.onclick=function() {
+    btn.style.display='none';
+    field.value='';
+}
+</script>
+
+    </div>
+    </div>
+    </div>
+
+    
+    </section>
+
+
+<!--footer-->
+<section>
+<footer class="footer">
+    <div class="containerFooter">
+        <div class="rowFooter">
+            <div class="footer-col">
+                <h4>company</h4>
+                <ul>
+                    <li><a href="#">about us</a></li>
+                    <li><a href="#">our services</a></li>
+                    <li><a href="#">privacy policy</a></li>
+                    <li><a href="#">affiliate program</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>get help</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">shipping</a></li>
+                    <li><a href="#">returns</a></li>
+                    <li><a href="#">order status</a></li>
+                    <li><a href="#">payment options</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <ul class="info">
+                    <li>
+                        <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                        <span>GradienTek<br>India</span>
+
+                    </li>
+                    <li>
+                        <span><i class="fa fa-phone" aria-hidden="true"></i></span>
+                        <p><a href="tel:7719020404">7000000000</a></p>
+                    </li>
+                    <li>
+                        <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                        <p><a href="mail:gradientek@gmail.com">gradientek@gmail.com</a><br>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>follow us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</footer>
+<script>
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+</script>
+</section>
+
+</body>
+
+</html>

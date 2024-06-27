@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="header.css">
+    <title>Buy-Sell</title>
+    <style>
+        :root {
+            --red: #ff5a3c;
+            --light-red: #f9edeb;
+        }
+
+        * {
+            font-family: 'poppins', sans-serif;
+           
+        }
+
+        
+        section {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* outline: none; 
+        border:none; */
+            text-decoration: none;
+            text-transform: capitalize;
+            zoom: 94%;
+        }
+
+        html {
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            scroll-padding-top: 7rem;
+        }
+
+
+        body {
+            margin: 0px;
+        }
+
+        .image-grid{
+            --gap: 16px;
+            --num-cols: 4;
+            --row-hright: 200px;
+
+            box-sizing: border-box;
+            padding:var(--gap);
+
+            display: grid;
+            grid-template-columns: repeat(var(--num-cols), 1fr);
+            grid-auto-rows: var(--row-hright);
+            gap: var(--gap);
+        }
+        .image-grid >button{
+            width: 100%;
+            height: 100%;
+          
+            align-items: center;
+            justify-content: center;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            
+        }
+        .image-grid-col-2{
+            grid-column: span 2;
+            transition: transfrom .2s ease-in-out;
+        }
+        .image-grid-row-2{
+            grid-row: span 2;
+            transition: transfrom .2s ease-in-out;
+        }
+        .image-grid-row-2:hover{
+            transform: scale(1.5);
+        }
+        .image-grid-col-2:hover{
+            transform: scale(1.5);
+        }
+        .image-grid-card{
+            transition: transform .2s ease-in-out;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+           
+        }
+        .image-grid-card >button{
+            border: none;
+            background-color: transparent;
+            transition: transform .2s ease-in-out;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        .image-grid-card:hover{
+            transform: scale(1.5);
+            box-shadow: #b7acaa;
+        }
+        @media screen and (max-width: 1024px) {
+            .image-grid{
+                --num-cols: 2;
+                --row-height: 200px;
+            }
+            
+        }
+
+      
+
+ .sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  width: 100px;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-right .5s;
+  padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+
+       
+#GFG {
+            text-decoration: none;
+        }
+
+        .icon-location {
+            background: url("https://img.icons8.com/material-outlined/24/undefined/marker.png") no-repeat left;
+            background-size: 20px;
+            padding-left: 25px;
+
+            height: 48px;
+            resize: vertical;
+            margin: 16px;
+            overflow: visible;
+            font-size: larger;
+        }
+
+        .icon-location::placeholder {
+            font-size: 20px;
+        }
+
+        .icon-search {
+            padding-left: 25px;
+            background: url("https://static.thenounproject.com/png/101791-200.png") no-repeat left;
+            background-size: 20px;
+            height: 48px;
+            width: 50%;
+            resize: vertical;
+            margin: 16px;
+            overflow: visible;
+            font-size: larger;
+        }
+
+        .icon-search::placeholder {
+            font-size: 20px;
+
+
+        }
+
+        h1.heading {
+            font-size: 30PX;
+            text-align: center;
+            margin-bottom: 50px;
+            margin-top: 50px;
+        }
+
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .rating span,
+        .rating {
+            color: var(--carribean-green);
+        }
+
+        .credit {
+            text-align: center;
+            color: #fff;
+            font-weight: 900;
+            font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+                "Lucida Sans", Arial, sans-serif;
+        }
+
+        .credit a {
+            text-decoration: none;
+            color: #202124;
+            font-weight: bold;
+        }
+
+
+        .info {
+            position: relative;
+        }
+
+        .info li {
+            display: grid;
+            grid-template-columns: 30px 1fr;
+            margin-bottom: 2px;
+        }
+
+        .info li span:nth-child(1) {
+            color: black;
+            font-size: 20px;
+        }
+
+        .info li span {
+            color: black;
+        }
+
+        .info a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .info a:hover {
+            color: #ffeb3b;
+        }
+
+
+</style>
+
+</head>
+<body>
+    <div class="header">
+        <a href="index.html" class="logo">Buy & Sell</a>
+
+        <select name="cities" id="cities" placeholder="City" style="
+              background: url(https://img.icons8.com/material-outlined/24/undefined/marker.png)
+                no-repeat left;
+              width: 264px;
+              padding: 17px;
+              size: 100%;
+              border-width: 3px;
+              margin: 15px;
+              @media screen and (max-width: 1040px) {
+                height: 15px;
+              }
+            ">
+            <option value="Adilabad">Adilabad</option>
+            <option value="Agra">Agra</option>
+            <option value="Ahmedabad">Ahmedabad</option>
+            <option value="Ahmednagar">Ahmednagar</option>
+            <option value="Aizawl">Aizawl</option>
+            <option value="Ajitgarh(Mohali)">Ajitgarh (Mohali)</option>
+            <option value="Ajmer">Ajmer</option>
+            <option value="Akola">Akola</option>
+            <option value="Alappuzha">Alappuzha</option>
+            <option value="Aligarh">Aligarh</option>
+            <option value="Alirajpur">Alirajpur</option>
+            <option value="Allahabad">Allahabad</option>
+            <option value="Almora">Almora</option>
+            <option value="Alwar">Alwar</option>
+            <option value="Ambala">Ambala</option>
+            <option value="AmbedkarNagar">Ambedkar Nagar</option>
+            <option value="Amravati">Amravati</option>
+            <option value="Amrelidistrict">Amreli district</option>
+            <option value="Amritsar">Amritsar</option>
+            <option value="Anand">Anand</option>
+            <option value="Anantapur">Anantapur</option>
+            <option value="Anantnag">Anantnag</option>
+            <option value="Angul">Angul</option>
+            <option value="Anjaw">Anjaw</option>
+            <option value="Anuppur">Anuppur</option>
+            <option value="Araria">Araria</option>
+           
+        </select>
+
+          
+        <input type="text" class="icon-search" value placeholder="Search" />
+        
+        <div class="header-right">
+            <div id="mySidebar" class="sidebar">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+                <a href="#">About <br><br></a>
+                <a href="./selling_homepage.html">Sell Your Product <br><br></a>
+                <a href="./user_profile.html">Update Profile <br><br></a>
+                <a href="#">Contact Us <br><br></a>
+              </div>
+              
+              <div id="main">
+                <button class="openbtn" onclick="openNav()">User Profile</button>  
+                
+              </div>
+              
+              <script>
+                    function openNav() {
+                        document.getElementById("mySidebar").style.width = "250px";
+                        document.getElementById("main").style.marginLeft = "250px";
+                    }
+                    
+                    function closeNav() {
+                        document.getElementById("mySidebar").style.width = "0";
+                        document.getElementById("main").style.marginLeft= "0";
+                    }
+              </script>
+              
+
+                </div>
+        
+        </div>
+
+
+
+    <div class="topnav" id="myTopnav">
+
+        Menu
+
+        <div class="dropdown">
+
+            <!-- <div class="spacing"> -->
+            <button class="dropbtn">Mobile
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="tablet.html">Tablet</a>
+                <a href="andriod.html">Andriod</a>
+                <a href="iphone.html">Iphone</a>
+                <a href="accessories.html">Accesories</a>
+                <a href="see all mobile.html"><u>See all</u></a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Electronics
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="TV.html">TVs</a>
+                <a href="Fridge.html">Fridge</a>
+                <a href="ACs.html">ACs</a>
+                <a href="cameras & lens.html">Cameras & Lenses</a>
+                <a href="Computers & laptops.html">Computers & laptops</a>
+                <a href="See all electronics.html"><u>See all</u></a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Furniture
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="sofa.html">Sofa & Dining</a>
+                <a href="bed.html">Beds & Wardrobes</a>
+                <a href="homedecore.html">Home Decor & Garden</a>
+                <a href="kid furniture.html">Kids Furniture</a>
+                <a href="furniture seeall.html"><u>See all</u></a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Bikes
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="Motorcycle.html">Motorcycles</a>
+                <a href="scooter.html">Scooters</a>
+                <a href="s_parts.html">Spare Parts</a>
+                <a href="Bicycle.html">Bicycles</a>
+                <a href="All_bikes.html"><u>See all</u></a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Cars
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="automatic.html">Automatic</a>
+                <a href="manual.html">Manual</a>
+                <a href="see all  cars.html"><u>See all</u></a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Books, Sports and Hobbies
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="books.html">Books</a>
+                <a href="gym.html">Gym & Fitness</a>
+                <a href="sports.html">Sports Equipment</a>
+                <a href="other.html">Other Hobbies</a>
+                <a href="see all hobbies.html"><u>See all</u></a>
+            </div>
+        </div>
+        <!-- </div> -->
+        <a href="javascript:void(0);" style="font-size:20px;" class="icon" onclick="myFunction()">&#9776; Menu</a>
+
+    </div>
+     
+     
+    <div class="image-grid">
+        <button class=" image-grid-col-2 image-grid-row-2" onclick="location.href='Bicycle.html'"><h1>Bicycle</h1>
+         
+       </button>
+        <button class=" image-grid-col-2 image-grid-row-2" onclick="location.href='see all  cars.html'"><h1>Cars</h1>
+           
+       </button>
+   
+   <div class="image-grid-card"><button onclick="location.href='tablet.html'"><h1>Tablet</h1></button></div>
+   <div class="image-grid-card"><button onclick="location.href='iphone.html'"><h1>Iphone</h1></button></div>
+   <div class="image-grid-card"><button onclick="location.href='Computers & laptops.html'"><h1>Laptop</h1></button></div>
+   <div class="image-grid-card"><button onclick="location.href='books.html'"><h1>Books</h1></button></div>
+</div>
+
+    <footer class="footer">
+        <div class="containerFooter">
+            <div class="rowFooter">
+                <div class="footer-col">
+                    <h4>company</h4>
+                    <ul>
+                        <li><a href="#">about us</a></li>
+                        <li><a href="#">our services</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                        <li><a href="#">affiliate program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>get help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">shipping</a></li>
+                        <li><a href="#">returns</a></li>
+                        <li><a href="#">order status</a></li>
+                        <li><a href="#">payment options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="info">
+                        <li>
+                            <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                            <span>GradienTek<br>India</span>
+
+                        </li>
+                        <li>
+                            <span><i class="fa fa-phone" aria-hidden="true"></i></span>
+                            <p><a href="tel:7719020404">7000000000</a></p>
+                        </li>
+                        <li>
+                            <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                            <p><a href="mail:gradientek@gmail.com">gradientek@gmail.com</a><br>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </footer>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+    
+</body>
+</html>

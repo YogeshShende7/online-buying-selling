@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="index_style.css">
+    <link rel="stylesheet" href="header.css">
+    
+
+  <title>Buy And Sell</title>
+  <style>
+   
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <a href="#default" class="logo">Buy & Sell</a>
+
+    <select name="cities" id="cities" placeholder="City" style="
+          background: url(https://img.icons8.com/material-outlined/24/undefined/marker.png)
+            no-repeat left;
+          width: 264px;
+          padding: 17px;
+          size: 100%;
+          border-width: 3px;
+          margin: 15px;
+          background-color: white;
+          @media screen and (max-width: 1040px) {
+            height: 15px;
+          }
+        ">
+      <option value="Adilabad">Adilabad</option>
+      <option value="Agra">Agra</option>
+      <option value="Ahmedabad">Ahmedabad</option>
+      <option value="Ahmednagar">Ahmednagar</option>
+      <option value="Aizawl">Aizawl</option>
+      <option value="Ajitgarh(Mohali)">Ajitgarh (Mohali)</option>
+      <option value="Ajmer">Ajmer</option>
+      <option value="Akola">Akola</option>
+      <option value="Alappuzha">Alappuzha</option>
+      <option value="Aligarh">Aligarh</option>
+      <option value="Alirajpur">Alirajpur</option>
+      <option value="Allahabad">Allahabad</option>
+      <option value="Almora">Almora</option>
+      <option value="Alwar">Alwar</option>
+      <option value="Ambala">Ambala</option>
+      <option value="AmbedkarNagar">Ambedkar Nagar</option>
+      <option value="Amravati">Amravati</option>
+      <option value="Amrelidistrict">Amreli district</option>
+      <option value="Amritsar">Amritsar</option>
+      <option value="Anand">Anand</option>
+      <option value="Anantapur">Anantapur</option>
+      <option value="Anantnag">Anantnag</option>
+      <option value="Angul">Angul</option>
+      <option value="Anjaw">Anjaw</option>
+      <option value="Anuppur">Anuppur</option>
+      <option value="Araria">Araria</option>
+      <option value="Ariyalur">Ariyalur</option>
+      <option value="Arwal">Arwal</option>
+      <option value="AshokNagar">Ashok Nagar</option>
+      <option value="Auraiya">Auraiya</option>
+      <option value="Aurangabad">Aurangabad</option>
+      <option value="Aurangabad">Aurangabad</option>
+      <option value="Azamgarh">Azamgarh</option>
+      <option value="Badgam">Badgam</option>
+      <option value="Bagalkot">Bagalkot</option>
+      <option value="Bageshwar">Bageshwar</option>
+      <option value="Bagpat">Bagpat</option>
+      <option value="Bahraich">Bahraich</option>
+      <option value="Baksa">Baksa</option>
+      <option value="Balaghat">Balaghat</option>
+      <option value="Balangir">Balangir</option>
+      <option value="Balasore">Balasore</option>
+      <option value="Ballia">Ballia</option>
+      <option value="Balrampur">Balrampur</option>
+      <option value="Banaskantha">Banaskantha</option>
+      <option value="Banda">Banda</option>
+      <option value="Bandipora">Bandipora</option>
+      <option value="BangaloreRural">Bangalore Rural</option>
+      <option value="BangaloreUrban">Bangalore Urban</option>
+      <option value="Banka">Banka</option>
+      <option value="Bankura">Bankura</option>
+      <option value="Banswara">Banswara</option>
+      <option value="Barabanki">Barabanki</option>
+      <option value="Baramulla">Baramulla</option>
+      <option value="Baran">Baran</option>
+      <option value="Bardhaman">Bardhaman</option>
+      <option value="Bareilly">Bareilly</option>
+      <option value="Bargarh(Baragarh)">Bargarh (Baragarh)</option>
+      <option value="Barmer">Barmer</option>
+      <option value="Barnala">Barnala</option>
+      <option value="Barpeta">Barpeta</option>
+      <option value="Barwani">Barwani</option>
+      <option value="Bastar">Bastar</option>
+      <option value="Basti">Basti</option>
+      <option value="Bathinda">Bathinda</option>
+      <option value="Beed">Beed</option>
+      <option value="Begusarai">Begusarai</option>
+      <option value="Belgaum">Belgaum</option>
+      <option value="Bellary">Bellary</option>
+      <option value="Betul">Betul</option>
+      <option value="Bhadrak">Bhadrak</option>
+      <option value="Bhagalpur">Bhagalpur</option>
+      <option value="Bhandara">Bhandara</option>
+      <option value="Bharatpur">Bharatpur</option>
+      <option value="Bharuch">Bharuch</option>
+      <option value="Bhavnagar">Bhavnagar</option>
+      <option value="Bhilwara">Bhilwara</option>
+      <option value="Bhind">Bhind</option>
+      <option value="Bhiwani">Bhiwani</option>
+      <option value="Bhojpur">Bhojpur</option>
+      <option value="Bhopal">Bhopal</option>
+      <option value="Bidar">Bidar</option>
+      <option value="Bijapur">Bijapur</option>
+      <option value="Bijapur">Bijapur</option>
+      <option value="Bijnor">Bijnor</option>
+      <option value="Bikaner">Bikaner</option>
+      <option value="Bilaspur">Bilaspur</option>
+      <option value="Bilaspur">Bilaspur</option>
+      <option value="Birbhum">Birbhum</option>
+      <option value="Bishnupur">Bishnupur</option>
+      <option value="Bokaro">Bokaro</option>
+      <option value="Bongaigaon">Bongaigaon</option>
+      <option value="Boudh(Bauda)">Boudh (Bauda)</option>
+      <option value="Budaun">Budaun</option>
+      <option value="Bulandshahr">Bulandshahr</option>
+      <option value="Buldhana">Buldhana</option>
+      <option value="Bundi">Bundi</option>
+      <option value="Burhanpur">Burhanpur</option>
+      <option value="Buxar">Buxar</option>
+      <option value="Cachar">Cachar</option>
+      <option value="CentralDelhi">Central Delhi</option>
+      <option value="Chamarajnagar">Chamarajnagar</option>
+      <option value="Chamba">Chamba</option>
+      <option value="Chamoli">Chamoli</option>
+      <option value="Champawat">Champawat</option>
+      <option value="Champhai">Champhai</option>
+      <option value="Chandauli">Chandauli</option>
+      <option value="Chandel">Chandel</option>
+      <option value="Chandigarh">Chandigarh</option>
+      <option value="Chandrapur">Chandrapur</option>
+      <option value="Changlang">Changlang</option>
+      <option value="Chatra">Chatra</option>
+      <option value="Chennai">Chennai</option>
+      <option value="Chhatarpur">Chhatarpur</option>
+      <option value="ChhatrapatiShahujiMaharajNagar">
+        Chhatrapati Shahuji Maharaj Nagar
+      </option>
+      <option value="Chhindwara">Chhindwara</option>
+      <option value="Chikkaballapur">Chikkaballapur</option>
+      <option value="Chikkamagaluru">Chikkamagaluru</option>
+      <option value="Chirang">Chirang</option>
+      <option value="Chitradurga">Chitradurga</option>
+      <option value="Chitrakoot">Chitrakoot</option>
+      <option value="Chittoor">Chittoor</option>
+      <option value="Chittorgarh">Chittorgarh</option>
+      <option value="Churachandpur">Churachandpur</option>
+      <option value="Churu">Churu</option>
+      <option value="Coimbatore">Coimbatore</option>
+      <option value="CoochBehar">Cooch Behar</option>
+      <option value="Cuddalore">Cuddalore</option>
+      <option value="Cuttack">Cuttack</option>
+      <option value="DadraandNagarHaveli">Dadra and Nagar Haveli</option>
+      <option value="Dahod">Dahod</option>
+      <option value="DakshinDinajpur">Dakshin Dinajpur</option>
+      <option value="DakshinaKannada">Dakshina Kannada</option>
+      <option value="Daman">Daman</option>
+      <option value="Damoh">Damoh</option>
+      <option value="Dantewada">Dantewada</option>
+      <option value="Darbhanga">Darbhanga</option>
+      <option value="Darjeeling">Darjeeling</option>
+      <option value="Darrang">Darrang</option>
+      <option value="Datia">Datia</option>
+      <option value="Dausa">Dausa</option>
+      <option value="Davanagere">Davanagere</option>
+      <option value="Debagarh(Deogarh)">Debagarh (Deogarh)</option>
+      <option value="Dehradun">Dehradun</option>
+      <option value="Deoghar">Deoghar</option>
+      <option value="Deoria">Deoria</option>
+      <option value="Dewas">Dewas</option>
+      <option value="Dhalai">Dhalai</option>
+      <option value="Dhamtari">Dhamtari</option>
+      <option value="Dhanbad">Dhanbad</option>
+      <option value="Dhar">Dhar</option>
+      <option value="Dharmapuri">Dharmapuri</option>
+      <option value="Dharwad">Dharwad</option>
+      <option value="Dhemaji">Dhemaji</option>
+      <option value="Dhenkanal">Dhenkanal</option>
+      <option value="Dholpur">Dholpur</option>
+      <option value="Dhubri">Dhubri</option>
+      <option value="Dhule">Dhule</option>
+      <option value="DibangValley">Dibang Valley</option>
+      <option value="Dibrugarh">Dibrugarh</option>
+      <option value="DimaHasao">Dima Hasao</option>
+      <option value="Dimapur">Dimapur</option>
+      <option value="Dindigul">Dindigul</option>
+      <option value="Dindori">Dindori</option>
+      <option value="Diu">Diu</option>
+      <option value="Doda">Doda</option>
+      <option value="Dumka">Dumka</option>
+      <option value="Dungapur">Dungapur</option>
+      <option value="Durg">Durg</option>
+      <option value="EastChamparan">East Champaran</option>
+      <option value="EastDelhi">East Delhi</option>
+      <option value="EastGaroHills">East Garo Hills</option>
+      <option value="EastKhasiHills">East Khasi Hills</option>
+      <option value="EastSiang">East Siang</option>
+      <option value="EastSikkim">East Sikkim</option>
+      <option value="EastSinghbhum">East Singhbhum</option>
+      <option value="Eluru">Eluru</option>
+      <option value="Ernakulam">Ernakulam</option>
+      <option value="Erode">Erode</option>
+      <option value="Etah">Etah</option>
+      <option value="Etawah">Etawah</option>
+      <option value="Faizabad">Faizabad</option>
+      <option value="Faridabad">Faridabad</option>
+      <option value="Faridkot">Faridkot</option>
+      <option value="Farrukhabad">Farrukhabad</option>
+      <option value="Fatehabad">Fatehabad</option>
+      <option value="FatehgarhSahib">Fatehgarh Sahib</option>
+      <option value="Fatehpur">Fatehpur</option>
+      <option value="Fazilka">Fazilka</option>
+      <option value="Firozabad">Firozabad</option>
+      <option value="Firozpur">Firozpur</option>
+      <option value="Gadag">Gadag</option>
+      <option value="Gadchiroli">Gadchiroli</option>
+      <option value="Gajapati">Gajapati</option>
+      <option value="Ganderbal">Ganderbal</option>
+      <option value="Gandhinagar">Gandhinagar</option>
+      <option value="Ganganagar">Ganganagar</option>
+      <option value="Ganjam">Ganjam</option>
+      <option value="Garhwa">Garhwa</option>
+      <option value="GautamBuddhNagar">Gautam Buddh Nagar</option>
+      <option value="Gaya">Gaya</option>
+      <option value="Ghaziabad">Ghaziabad</option>
+      <option value="Ghazipur">Ghazipur</option>
+      <option value="Giridih">Giridih</option>
+      <option value="Goalpara">Goalpara</option>
+      <option value="Godda">Godda</option>
+      <option value="Golaghat">Golaghat</option>
+      <option value="Gonda">Gonda</option>
+      <option value="Gondia">Gondia</option>
+      <option value="Gopalganj">Gopalganj</option>
+      <option value="Gorakhpur">Gorakhpur</option>
+      <option value="Gulbarga">Gulbarga</option>
+      <option value="Gumla">Gumla</option>
+      <option value="Guna">Guna</option>
+      <option value="Guntur">Guntur</option>
+      <option value="Gurdaspur">Gurdaspur</option>
+      <option value="Gurgaon">Gurgaon</option>
+      <option value="Gwalior">Gwalior</option>
+      <option value="Hailakandi">Hailakandi</option>
+      <option value="Hamirpur">Hamirpur</option>
+      <option value="Hamirpur">Hamirpur</option>
+      <option value="Hanumangarh">Hanumangarh</option>
+      <option value="Harda">Harda</option>
+      <option value="Hardoi">Hardoi</option>
+      <option value="Haridwar">Haridwar</option>
+      <option value="Hassan">Hassan</option>
+      <option value="Haveridistrict">Haveri district</option>
+      <option value="Hazaribag">Hazaribag</option>
+      <option value="Hingoli">Hingoli</option>
+      <option value="Hissar">Hissar</option>
+      <option value="Hooghly">Hooghly</option>
+      <option value="Hoshangabad">Hoshangabad</option>
+      <option value="Hoshiarpur">Hoshiarpur</option>
+      <option value="Howrah">Howrah</option>
+      <option value="Hyderabad">Hyderabad</option>
+      <option value="Hyderabad">Hyderabad</option>
+      <option value="Idukki">Idukki</option>
+      <option value="ImphalEast">Imphal East</option>
+      <option value="ImphalWest">Imphal West</option>
+      <option value="Indore">Indore</option>
+      <option value="Jabalpur">Jabalpur</option>
+      <option value="Jagatsinghpur">Jagatsinghpur</option>
+      <option value="JaintiaHills">Jaintia Hills</option>
+      <option value="Jaipur">Jaipur</option>
+      <option value="Jaisalmer">Jaisalmer</option>
+      <option value="Jajpur">Jajpur</option>
+      <option value="Jalandhar">Jalandhar</option>
+      <option value="Jalaun">Jalaun</option>
+      <option value="Jalgaon">Jalgaon</option>
+      <option value="Jalna">Jalna</option>
+      <option value="Jalore">Jalore</option>
+      <option value="Jalpaiguri">Jalpaiguri</option>
+      <option value="Jammu">Jammu</option>
+      <option value="Jamnagar">Jamnagar</option>
+      <option value="Jamtara">Jamtara</option>
+      <option value="Jamui">Jamui</option>
+      <option value="Janjgir-Champa">Janjgir-Champa</option>
+      <option value="Jashpur">Jashpur</option>
+      <option value="Jaunpurdistrict">Jaunpur district</option>
+      <option value="Jehanabad">Jehanabad</option>
+      <option value="Jhabua">Jhabua</option>
+      <option value="Jhajjar">Jhajjar</option>
+      <option value="Jhalawar">Jhalawar</option>
+      <option value="Jhansi">Jhansi</option>
+      <option value="Jharsuguda">Jharsuguda</option>
+      <option value="Jhunjhunu">Jhunjhunu</option>
+      <option value="Jind">Jind</option>
+      <option value="Jodhpur">Jodhpur</option>
+      <option value="Jorhat">Jorhat</option>
+      <option value="Junagadh">Junagadh</option>
+      <option value="JyotibaPhuleNagar">Jyotiba Phule Nagar</option>
+      <option value="Kabirdham(formerlyKawardha)">
+        Kabirdham (formerly Kawardha)
+      </option>
+      
+
+    <!-- <input type="text" class="icon-location" value placeholder="location"> -->
+    <input type="text" class="icon-search" value placeholder="Search" />
+    <div class="header-right">
+      <a href="login.html"><b>LogIn</b></a>
+     
+    </div>
+  </div>
+  <div class="topnav" id="myTopnav">
+
+    Menu
+
+    <div class="dropdown">
+
+        <!-- <div class="spacing"> -->
+        <button class="dropbtn">Mobile
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="tablet.html">Tablet</a>
+            <a href="andriod.html">Andriod</a>
+            <a href="iphone.html">Iphone</a>
+            <a href="accessories.html">Accesories</a>
+            <a href="see all mobile.html"><u>See all</u></a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Electronics
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="TV.html">TV</a>
+            <a href="Fridge.html">Fridge</a>
+            <a href="ACs.html">ACs</a>
+            <a href="cameras & lens.html">Cameras & Lenses</a>
+            <a href="Computers & laptops.html">Computers & laptops</a>
+            <a href="See all electronics.html"><u>See all</u></a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Furniture
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="sofa.html">Sofa & Dining</a>
+            <a href="bed.html">Beds & Wardrobes</a>
+            <a href="homedecore.html">Home Decor & Garden</a>
+            <a href="kid furniture.html">Kids Furniture</a>
+            <a href="furniture seeall.html"><u>See all</u></a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Bikes
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="Motorcycle.html">Motorcycles</a>
+            <a href="scooter.html">Scooters</a>
+            <a href="s_parts.html">Spare Parts</a>
+            <a href="Bicycle.html">Bicycles</a>
+            <a href="All_bikes.html"><u>See all</u></a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Cars
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="automatic.html">Automatic</a>
+            <a href="manual.html">Manual</a>
+            <a href="see all  cars.html"><u>See all</u></a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Books, Sports and Hobbies
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="books.html">Books</a>
+            <a href="gym.html">Gym & Fitness</a>
+            <a href="sports.html">Sports Equipment</a>
+            <a href="other.html">Other Hobbies</a>
+            <a href="see all hobbies.html"><u>See all</u></a>
+        </div>
+    </div>
+    <!-- </div> -->
+    <a href="javascript:void(0);" style="font-size:20px;" class="icon" onclick="myFunction()">&#9776; Menu</a>
+
+</div>
+
+
+
+
+  <!--about section-->
+
+  <div class="section">
+    <div class="container">
+      <div class="content-section">
+        <div class="title">
+          <!-- <img src="./front2.jpeg" alt=""> -->
+        </div>
+        <!-- <div class="content">
+          <h3>
+            A Guide for Information Professionals and Salespeople to Build
+            Mutual Success
+          </h3>
+          <p>
+            Both sides of the negotiating table are represented in this
+            practical and much-needed guide by Michael L. Gruenberg, a veteran
+            of the electronic information field.
+          </p> -->
+          <!-- <div class="button">
+                        <a href="https://youtu.be/xScTwgFASMU" class="btn">Watch Video</a>
+                    </div> -->
+        </div>
+      </div>
+       <!--<div class="image-section">
+        <img src="./front2.jpeg" alt="image not found" />
+      </div>-->
+    </div>
+  </div>
+  <!--services section-->
+  <div class="in-container">
+    <div class="details">
+      <h2 text-align="center">Services</h2>
+    </div>
+    <div class="main-box" >
+      <div class="box box-grey" onclick="location.href='#';" style="cursor: pointer;">
+        <div class="icon">
+          <i class="fas fa-desktop"></i>
+        </div>
+        <h2>Buying Services</h2>
+        <hr />
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda
+          labore.
+        </p>
+        
+      </div>
+
+      <div class="box box-red" onclick="location.href='#';" style="cursor: pointer;">
+        <div class="icon">
+          <i class="fas fa-globe"></i>
+        </div>
+        <h2>Selling Services</h2>
+        <hr />
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda
+          labore.
+        </p>
+        
+      </div>
+
+     <!-- <div class="box box-grey" onclick="location.href='#';" style="cursor: pointer;">
+        <div class="icon">
+          <i class="fas fa-search"></i>
+        </div>
+        <h2>Legal Services</h2>
+        <hr />
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda
+          labore.
+        </p>
+        
+      </div>
+      <div class="box box-red" onclick="location.href='#';" style="cursor: pointer;">
+        <div class="icon">
+          <i class="fa fa-address-card" aria-hidden="true"></i>
+        </div>
+        <h2>Reg Services</h2>
+        <hr />
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+          labore.
+        </p>
+        
+      </div>-->
+    </div>
+  </div>
+  <br>
+  <br>
+
+  <!--service we offer-->
+
+  <div class="row">
+    <div class="column">
+      <div class="content">
+        <span class="img-container">
+        <img src="images/fastdelivery.jpeg" alt="delivery" style="width:100%">
+      </span>
+        <h3 style="text-align:center" >Fast Delivery</h3>
+        
+      </div>
+    </div>
+    <div class="column">
+      <div class="content">
+        <span class="img-container">
+      <img src="images/shipping.jpeg" alt="cart" style="width:100%">
+    </span>
+      
+        <h3 style="text-align:center" >Free Shipping on Orders Over Rs.200</h3>
+        
+      </div>
+    </div>
+    <div class="column">
+      <div class="content">
+        <span class="img-container">
+      <img src="images/247.jpeg" alt="24/7" style="width:80%">
+    </span>
+      
+        <h3 style="text-align:center" >Available to You 24/7 </h3>
+        
+      </div>
+    </div>
+    <div class="column">
+      <div class="content">
+        <span class="img-container">
+      <img src="images/lowprice.jpeg" alt="lowprice" style="width:80%">
+    </span>
+        <h3 style="text-align:center">Low Prices Guarantee </h3>
+        
+        
+      </div>
+    </div>
+  </div>
+  </div>
+  <hr>
+  <!--testimonials section-->
+
+  <h2 align="center " style="font-size: 46px;">Testimonials</h2>
+  <div class="container3">
+    <div class="testimonials">
+      <ul>
+        <li>
+          <img src="https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814049__340.png" />
+          <p class="lineUp">
+            " Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Assumenda labore."
+          </p>
+          <h1>-Sam-</h1>
+        </li>
+        <li>
+          <img src="https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814049__340.png" />
+          <p class="lineUp">
+            " Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Assumenda labore."
+          </p>
+          <h1>-Joe-</h1>
+        </li>
+        <li>
+          <img src="https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814049__340.png" />
+          <p class="lineUp">
+            " Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Assumenda labore."
+          </p>
+          <h1>-Ram-</h1>
+        </li>
+        <li>
+          <img src="https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814049__340.png" />
+          <p class="lineUp">
+            " Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Assumenda labore."
+          </p>
+          <h1>-Sam-</h1>
+        </li>
+        <li>
+          <img src="https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814049__340.png" />
+          <p class="lineUp">
+            " Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Assumenda labore."
+          </p>
+          <h1>-Joe-</h1>
+        </li>
+        <li>
+          <img src="https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814049__340.png" />
+          <p class="lineUp">
+            " Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Assumenda labore."
+          </p>
+          <h1>-Ram-</h1>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+  <footer class="footer">
+    <div class="containerFooter">
+      <div class="rowFooter">
+        <div class="footer-col">
+          <h4>company</h4>
+          <ul>
+            <li><a href="#">about us</a></li>
+            <li><a href="#">our services</a></li>
+            <li><a href="#">privacy policy</a></li>
+            <li><a href="#">affiliate program</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>get help</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">shipping</a></li>
+            <li><a href="#">returns</a></li>
+            <li><a href="#">order status</a></li>
+            <li><a href="#">payment options</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <ul class="info">
+            <li>
+              <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+              <span>GradienTek<br>India</span>
+
+            </li>
+            <li>
+              <span><i class="fa fa-phone" aria-hidden="true"></i></span>
+              <p><a href="tel:7719020404">7000000000</a></p>
+            </li>
+            <li>
+              <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+              <p><a href="mail:gradientek@gmail.com">gradientek@gmail.com</a><br>
+              </p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>follow us</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </footer>
+  <script>
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+</script>
+
+</body>
+
+</html>
